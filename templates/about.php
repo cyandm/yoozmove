@@ -46,6 +46,16 @@ $content_value_one =get_field('content6');
 
 $title_why_one = get_field('title4');
 $content_Why_one =get_field('content7');
+
+
+$content_8 =get_field('content8');
+$content_9 =get_field('content9');
+$content_10 =get_field('content10');
+$content_11 =get_field('content11');
+$content_12 =get_field('content12');
+$content_13 =get_field('content13');
+
+
 ?>
 
 
@@ -287,6 +297,60 @@ $content_Why_one =get_field('content7');
    </div>
 
 <!-- end why-->
+
+<div class="row d-flex w-100">
+   <div class="card-dark w-30 m-3">
+      <p><?php if ($content_8= null) : ?>
+                    <div class="about-us">
+                        <?= $content_8; ?>
+                    </div>
+                <?php endif; ?> 
+      </p>
+   </div>
+   <div class="card-dark w-30 m-3">
+      <p><?php if ($content_9= null) : ?>
+                    <div class="about-us">
+                        <?= $content_9; ?>
+                    </div>
+                <?php endif; ?> 
+      </p>
+   </div>
+   <div class="card-dark w-30 m-3">
+      <p><?php if ($content_10= null) : ?>
+                    <div class="about-us">
+                        <?= $content_10; ?>
+                    </div>
+                <?php endif; ?> 
+      </p>
+   </div>
+   <br/>
+   <div class="card-dark w-30 m-3">
+      <p><?php if ($content_11= null) : ?>
+                    <div class="about-us">
+                        <?= $content_11; ?>
+                    </div>
+                <?php endif; ?> 
+      </p>
+   </div>
+   <div class="card-dark w-30 m-3">
+      <p><?php if ($content_12= null) : ?>
+                    <div class="about-us">
+                        <?= $content_12; ?>
+                    </div>
+                <?php endif; ?> 
+      </p>
+   </div>
+   <div class="card-dark w-30 m-3">
+      <p><?php if ($content_13= null) : ?>
+                    <div class="about-us">
+                        <?= $content_13; ?>
+                    </div>
+                <?php endif; ?> 
+      </p>
+   </div>
+</div>
+
+
 
 
 

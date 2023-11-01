@@ -3,20 +3,28 @@
 
 
 /*Template Name: Contact-us Page */ ?>
-<?php get_header(); ?>
-<main  class="contact-us-page  col-sm-12">
+<?php get_header();
+
+$title_location = get_field('location');
+$title_company = get_field('company_number');
+$title_contact = get_field('connect_with_us');
+
+
+
+?>
+<main  class="contact-us-page w-100">
     <div class="container ">
        <div class="contact-us row ">
         
          <div class="rel-contact-us col-sm-6 p-3 ltr">
-            <h3>Location</h3>
-            <p>Dallas Fort-Worth (DFW), Texas</p>
+            <h3 class="yellow">Location</h3>
+            <p><?= $title_location?></p>
             <br/>
-            <h3>Company Number</h3>
-            <p>0042626046 | 0042626046</p>
+            <h3 class="yellow">Company Number</h3>
+            <p><?= $title_company ?> | <?= $title_company ?></p>
             <br/>
-            <h3>Connect with us</h3>
-            <p>icons</p>
+            <h3 class="yellow">connect with us</h3>
+            <p><?= $title_contact ?></p>
             <br/>
         </div>
         <div class="image-contact-us col-sm-6 p-3">
@@ -29,25 +37,26 @@
        </div>
        
       
-       
+       <div class="w-100 form-contact">
        <form method="post" action="function.php">
         <h2>contact us</h2>
-           <div class="container">
+           <div class="form-group">
               <input type="text" class="border-input" name="firstname" placeholder="FirstName*" />
               <input type="text" class="border-input" name="lastname" placeholder="LastName*" />
            </div>
-           <div class="container">
+           <div class="form-group">
               <input type="text" class="border-input" name="number" placeholder="PhoneNumber*" />
               <input type="email" class="border-input" name="email" placeholder="Email" />
            </div>
-           <div class="container">
+           <div class="form-group">
            <textarea rows="5" class="text-area-contact-us " name="message" placeholder="Message*"></textarea>
 
            </div>
-           <div class="form-control">
-                <input type="submit" value="Submit" name="submit" />
+           <div class="">
+                <input type="submit" value="Submit" name="submit" class="btn-alert"/>
             </div>
        </form>
+</div>
     </div>
 </div>
 </main>

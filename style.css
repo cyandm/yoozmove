@@ -10,6 +10,31 @@
  * Description: Special Theme For Special Customer
  * Version: 1.0.0
 */
+.rel-contact-us.h3{
+font-size:24px;
+font-weight:700;
+}
+.rel-contact-us.p{
+    font-size:24px;
+    font-weight:400;
+    color:#fff;
+    }
+
+.form-contact{
+
+}
+.not-found{
+    float:left;
+    left:60%;
+  align-items: center;
+  justify-content: center;
+    width:50%;
+   display:block;
+    margin:0 auto;
+    color:yellow;
+  
+}
+
 
 .m-3 {
     margin: 1rem!important;

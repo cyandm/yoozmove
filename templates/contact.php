@@ -23,7 +23,10 @@
             <img src="<?= get_stylesheet_directory_uri() .'/assets/img/Group-37432.svg' ?>"/>
          </div>
        </div>
-       
+       <div class="topics">
+         <div class="title-topic"></div>
+         <div class="search-topic"></div>
+       </div>
        
       
        

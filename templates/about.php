@@ -74,7 +74,36 @@
                Choose Yooz Move for reliable, efficient services,
              making your move smooth and stress-free. Discover the Yooz Move difference with our exceptional team.
          </p>
-         <div class="counter"></div>
+         <div class=" row counter d-flex">
+         <div class="column">
+    <div class="card">
+      <p><i class="fa fa-user"></i></p>
+      <h3>11+</h3>
+      <p>Partners</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <p><i class="fa fa-user"></i></p>
+      <h3 class="yellow">11+</h3>
+      <p>Partners</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <p><i class="fa fa-user"></i></p>
+      <h3>11+</h3>
+      <p>Partners</p>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <p><i class="fa fa-user"></i></p>
+      <h3>11+</h3>
+      <p>Partners</p>
+    </div>
+  </div>
+         </div>
       </div>
       <div class="left">
        <img src="<?= get_stylesheet_directory_uri() .'/assets/img/our-team.svg' ?>"/>

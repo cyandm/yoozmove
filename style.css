@@ -21,18 +21,7 @@ font-weight:700;
     }
 
 .form-contact{
-
-}
-.not-found{
-    float:left;
-    left:60%;
-  align-items: center;
-  justify-content: center;
-    width:50%;
-   display:block;
-    margin:0 auto;
-    color:yellow;
-  
+margin:0 auto;
 }
 
 
@@ -1802,4 +1791,68 @@ width:100%;
 .vision-text ,.mission-text , .value-text{
     float:left;
     margin:5px 10px 10px 2px;
+}
+
+
+.contact-us{
+    display: flex;
+    margin: 10px 50px;
+   
+}
+
+.rel-contact-us{
+    float:right;
+    margin:2% 9% 1% 4%;
+    padding:1%;
+    text-align: left;
+}
+.rel-contact-us > p{
+    color:#fff;
+}
+.image-contact-us{
+    float:left;
+    margin:0 7%;
+    padding:2%;
+    align-items: center;
+}
+.form-contact{
+    /* float:left; */
+    align-items: center;
+    text-align: left;
+    margin:0 auto 10% auto;
+    padding:0 2%;
+}
+.form-group{
+    display:flex;
+    margin:1%;
+}
+
+.input-form{
+    border:1px solid silver;
+    border-radius: 7px;
+   padding:0.5em;
+   margin: 0.3em;
+   background: linear-gradient(180deg, #2C2D35 0%, #14151A 100%);
+   text-align:left;
+}
+.submit-form{
+    width:160px;
+    height:40px;
+    border-radius: 12px;
+    padding:10px 24px;
+    gap:10px;
+    background-color: #DEB645;
+}
+
+
+.not-found{
+    float:left;
+    left:60%;
+  align-items: center;
+  justify-content: center;
+    width:50%;
+   display:block;
+    margin:0 auto;
+    color:yellow;
+  
 }

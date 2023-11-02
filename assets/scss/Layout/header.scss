@@ -1,1 +1,6 @@
 @use '../utils' as *;
+
+.site-header {
+    &:has(.background-do-search.active) {
+      overflow: hidden;
+    }

@@ -1895,6 +1895,7 @@ input.btn-notfound {
 /* header */
 .site-header{
     overflow:hidden;
+    
 }
 .desktop-header{
     display: flex;
@@ -1905,11 +1906,24 @@ input.btn-notfound {
 }
 .header-content{
     display: flex;
-    margin:1% 0.5%;
+    margin: 0.5%;
     width:100%;
 }
+.left-menu{
+    display: flex;
+    float: left;
+   
+}
+.right-menu{
+    display: flex;
+    float:right;
+    
+}
 .desktop-menu{
-
+    position: absolute;
+    left: 10%;
+    width:50%;
+    margin-top:1%;
 }
 .desktop-menu > ul{
     display: flex;
@@ -1926,35 +1940,65 @@ input.btn-notfound {
     font-size: 22px;
     color: #fff;
     font-weight: 400;
+    padding:0 3%;
 }
 .header-content >form{
-    float:right;
-    margin:0 4%;
+    float: right;
+    padding-left: 0.5rem;
+    display:flex;
    
 }
 .header-content>form > input{
 width:140px;
-height:40px;
+height:52px;
 border:1px solid #4c4d50;
 border-radius: 10px;
 color:#4c4d50;
 justify-content: space-between;
 }
+input#search {
+    text-align: center;
+}
+
+.search-logo{
+    position: relative;
+    left: 22%;
+    height: 50%;
+    top: 25%;
+}
 .phone{
-    width: 190px;
-    height: 40px;
+    display:flex;
+    width: 170px;
+    height: 50px;
     border-radius: 12px;
     border: 1px solid gray;
     background: gray;
     color: #fff;
     
 }
-.phone >p{
+.phone>img{
+    height: 63%;
     background: inherit;
-    justify-content: space-between;
+    margin-right: 67%;
+    padding: 0.5em;
+    position: relative;
+    left: 52%;
+}
+.phone >p{
+    right: 12%;
+    position: relative;
+    background: inherit;
+    text-align: center;
+    font-size: 18px;
 }
 .logo {
     width: 50px;
     height: 50px;
     margin: 2% 1% 0% 1%;
+    position: absolute;
+    left: 20px;
+    top: 0px;
+}
+.logo > img{
+    width:100%;
 }

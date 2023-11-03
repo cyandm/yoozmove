@@ -11,25 +11,32 @@
   
 
   <!--<script href="/wp-content/themes/theme-init/theme-init/assets/js/dist/bootstrap.bundle.min.js" />-->
-
+  
 	<?php wp_head() ?>
 <?php 
-$phone = get_field('phone');
+
+$logo_header = get_field('logo');
+$phone =get_field('phone');
 ?>
 </head>
 
 <body <?php body_class() ?> >
 <header class="site-header">
-<div class="container desktop-header">
+<div class="container-fluid desktop-header">
 			<div class="header-content">
 				
-             <!-- <div class="logo"><?php the_custom_logo() ?></div> -->
-             
+           
+          <!-- <div class="right-menu"> -->
           <form action="/">
 							<input class="search" type="search" placeholder="search"
 								value="<?php the_search_query(); ?>" name="s" id="search" />
+                <img class="search-logo" src="../wp-content/themes/theme-init/yoozmove/assets/img/search-logo.svg" />
 					</form>
-          <div class="phone"><p>0042424242</p></div>
+          <div class="phone"><p>0042626046<?= $phone = get_field('phone'); ?></p>
+          <?= $logo_header ?><img src="../wp-content/themes/theme-init/yoozmove/assets/img/call.svg" />
+        </div>
+          <!-- </div> -->
+          <!-- <div class="left-menu"> -->
           <div class="desktop-menu">
 
 					    <ul>
@@ -40,8 +47,8 @@ $phone = get_field('phone');
             <li>Home</li>
              </ul>
              </div>
-          <div class="logo"><img src="/logo.svg"  /></div>
-				
+          <div class="logo"><?= $logo_header ?><img src="../wp-content/themes/theme-init/yoozmove/assets/img/logo.svg" /></div>
+          <!-- </div> -->
 
 				
 			</div>

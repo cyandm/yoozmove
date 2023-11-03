@@ -53,6 +53,22 @@ $phone =get_field('phone');
 				
 			</div>
 		</div>
-</header>
+    <!-- mobile-menu -->
+    <!-- <div class="mobile-menu">
+     <section class="first">
+      <div class="search-mobile">
+      <div class="cancle">
+      <img class="cancle" src="../wp-content/themes/theme-init/yoozmove/assets/img/cancle.svg" />
+      </div>
+      <form action="/">
+							<input class="search" type="search" placeholder="search"
+								value="<?php the_search_query(); ?>" name="s" id="search" />
+                <img class="search-logo" src="../wp-content/themes/theme-init/yoozmove/assets/img/search-logo.svg" />
+					</form>
+      </div>
+      
+     </section>
+    </div> -->
+  </header>
 
 	<?php wp_body_open() ?>

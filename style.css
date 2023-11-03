@@ -1575,8 +1575,9 @@ width:100%;
 .row {margin: 0 -5px;}
 .column {
     float: left;
-    width: 15%;
+    width: 16%;
     padding: 0 5px;
+    margin-right:2%;
   }
 
   .card {
@@ -2001,4 +2002,46 @@ input#search {
 }
 .logo > img{
     width:100%;
+}
+/* mobile-menu */
+.mobile-menu{
+width:100%;
+display:flex;
+background-color: inherit;
+padding:0.5em;
+}
+.search-mobile{
+    margin:0.5em;
+    
+
+}
+section.first{
+    display:flex;
+}
+
+/* footer */
+footer{
+    background: inherit;
+    display: flex;
+    width: 100%;
+    text-align: left;
+    color:#fff;
+}
+.column >h4{
+    padding: 0 5%;
+    font-size:20px;
+    font-weight: 700;
+    line-height: 24.2px;
+}
+.column >ul>li{
+    padding: 0 5%;
+    list-style-type: none;
+    font-size:16px;
+    font-weight:400;
+    line-height: 32px;
+}
+
+.column >img{
+    position: relative;
+    top: 25%;
 }

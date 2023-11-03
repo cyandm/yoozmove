@@ -3,8 +3,8 @@
 <div class="wp-scripts">
 	<?php wp_footer() ?>
 </div>
- <footer class="col-sm-12 row m-1 bg-dark text-light fixed-button">
-    <div class="col-sm-2">
+ <footer >
+    <div class="column">
       <h4>connect with us</h4>
       <ul class="row text-light">
       	<li><a href="/"><i class="fa fa-telegram"></i></a></li>
@@ -13,15 +13,16 @@
       	<li><a href="/"><i class="fa fa-telegram"></i></a></li>
 
       </ul>
+      <img src="../wp-content/themes/theme-init/yoozmove/assets/img/footer.svg" />
     </div>
   
-    <div class="col-sm-2">
+    <div class="column">
       <h4>Privacy policy</h4>
        <p>Terms and condition</p> 
        <p>Site map</p>
     </div>
 
-    <div class="col-sm-2">
+    <div class="column">
       <h4>Company number</h4>
        <ul class="row">
       	<li>0042626046</li>
@@ -30,7 +31,7 @@
 
       </ul>
     </div>
-    <div class="col-sm-2">
+    <div class="column">
       <h4>Locations served</h4>
       <ul class="w3-ul w3-hoverable">
         <li class="w3-padding-16">
@@ -49,37 +50,37 @@
          
       </ul>
     </div>
-     <div class="col-sm-2">
+     <div class="column">
       <h4>YoozMove</h4>
-      <ul class="w3-ul w3-hoverable">
-        <li class="w3-padding-16">
+      <ul>
+        <li>
          contact us
         </li>
-        <li class="w3-padding-16">
+        <li>
         about us
         </li>
-        <li class="w3-padding-16">
+        <li>
          testimonials
         </li>
        
       </ul>
     </div>
-     <div class="col-sm-2">
+     <div class="column" width="10%">
       <h4>Home</h4>
-      <ul class="w3-ul w3-hoverable">
-       <li class="w3-padding-16">
+      <ul>
+       <li>
          Home
         </li>
-        <li class="w3-padding-16">
+        <li>
          Services
         </li>
-        <li class="w3-padding-16">
+        <li>
          Additional service
         </li>
-        <li class="w3-padding-16">
+        <li>
          Get a Qoute
         </li>
-        <li class="w3-padding-16">
+        <li>
          FAQ’s
         </li>
       </ul>

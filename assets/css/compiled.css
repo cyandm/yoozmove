@@ -70,8 +70,19 @@
   font-style: normal;
   font-display: swap;
 }
-main {
-  background-color: #fff;
+/*opacity 40% */
+.site-header:has(.background-do-search.active) {
+  overflow: hidden;
+}
+
+main.contact-us-page {
+  background-color: #2C2D35 !important;
+  padding: 1px;
+}
+
+/*66*/
+our-story {
+  color: red;
 }
 
 /*# sourceMappingURL=compiled.css.map */

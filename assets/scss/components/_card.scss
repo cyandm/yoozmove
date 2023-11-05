@@ -6,7 +6,28 @@ card{
     padding: 1rem;
     text-align: left;
 
-    card-header{
-background-color: $gray2;
+    &:card-comment{
+        color:#fff;
+        position:relative;
     }
+    card-header{
+       color: $yellow;
+       position:relative;
+      
+       h5{
+
+        a{
+            color:$white;
+           }
+       }
+      
+    }
+    card-body{
+       color: $white;
+       padding-left:2rem;  
+
+       p{
+        color:$white2;
+       }
+     }
 }

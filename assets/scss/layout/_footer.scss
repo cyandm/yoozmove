@@ -1,0 +1,44 @@
+@use '../utils' as *;
+
+
+
+footer{
+    background: inherit;
+    display: flex;
+    width: 100%;
+    text-align: left;
+    color:#fff;
+}
+.column {
+    h4
+    {
+    padding: 0 5%;
+    font-size:20px;
+    font-weight: 700;
+    line-height: 24.2px;
+    }
+}
+.column {
+    ul
+    {
+        li{
+    padding: 0 1rem;
+    list-style-type: none;
+    font-size:16px;
+    font-weight:400;
+    line-height: 32px;
+    a{
+        color:$white;
+        text-decoration: none;
+    }
+        }
+    }
+}
+
+.column {
+    img{
+    position: relative;
+    top: 25%;
+    }
+}
+

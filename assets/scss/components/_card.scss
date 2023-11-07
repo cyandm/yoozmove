@@ -1,16 +1,17 @@
 @use '../utils' as *;
 
-card{
-    border: 1px solid $gray;
+.card{
+    border: 1px solid $gray1;
     margin: 1rem;
     padding: 1rem;
     text-align: left;
 
-    &:card-comment{
+    
+    .card-comment{
         color:#fff;
         position:relative;
     }
-    card-header{
+    .card-header{
        color: $yellow;
        position:relative;
       
@@ -22,12 +23,13 @@ card{
        }
       
     }
-    card-body{
+    .card-body{
        color: $white;
        padding-left:2rem;  
 
        p{
-        color:$white2;
+        color:$white;
        }
      }
 }
+

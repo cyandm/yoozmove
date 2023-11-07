@@ -1,0 +1,138 @@
+@use '../utils' as *;
+
+.site-header {
+  &:has(.background-do-search.active) {
+    overflow: hidden;
+  }
+}
+
+.desktop-menu{
+  position: absolute;
+  left: 10%;
+  width:50%;
+  margin-top:1%;
+}
+.desktop-menu {
+  ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  text-decoration: none;
+  }
+}
+.desktop-menu {
+
+ ul {
+
+ li{
+  position: relative;
+  isolation: isolate;
+  text-decoration: none;
+  list-style-type: none;
+  font-size: 22px;
+  color: #fff;
+  font-weight: 400;
+  padding:0 0.3rem;
+  a{
+    color:$white;
+    text-decoration: none;
+  }
+}
+ }
+}
+
+
+
+.desktop-header{
+  display: flex;
+  width: 100%;
+  text-align: left;
+  align-items: left;
+
+}
+.header-content{
+  display: flex;
+  margin: 0.5%;
+  width:100%;
+}
+.left-menu{
+  display: flex;
+  float: left;
+ 
+}
+.right-menu{
+  display: flex;
+  float:right;
+  
+}
+.header-content {
+  form{
+  float: right;
+  padding-left: 0.5rem;
+  display:flex;
+  }
+}
+.header-content{
+  form {
+    input{
+width:140px;
+height:52px;
+border:1px solid #4c4d50;
+border-radius: 10px;
+color:#4c4d50;
+justify-content: space-between;
+}}}
+
+input#search {
+  text-align: center;
+}
+
+.search-logo{
+  position: relative;
+  left: 22%;
+  height: 50%;
+  top: 25%;
+}
+.phone{
+  display:flex;
+  width: 170px;
+  height: 50px;
+  border-radius: 12px;
+  border: 1px solid gray;
+  background: gray;
+  color: #fff;
+  
+}
+.phone{
+  img{
+    background: inherit;
+    margin-right: 7rem;
+    padding: 0.5em;
+    position: relative;
+    left: 6rem;
+  }
+
+}
+.phone {
+  p{
+    right: 1rem;
+    position: relative;
+    background: inherit;
+    text-align: center;
+    font-size: 18px;
+  }
+}
+.logo {
+  width: 50px;
+  height: 50px;
+  margin: 2% 1% 0% 1%;
+  position: absolute;
+  left: 20px;
+  top: 0px;
+}
+.logo {
+   img{
+  width:100%;
+}
+}

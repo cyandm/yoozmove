@@ -1116,18 +1116,7 @@ textarea.form-control-lg {
     text-align: justify;
 }
 
-.right{
-    position:right;
-    float:right;
-    text-decoration: right;
-    text-align:right;
-}
-.left{
-    position:left;
-    float:left;
-    text-decoration: left;
-    text-align:left;
-}
+
 
 .text-white{
     color:#fff !important;
@@ -1599,56 +1588,6 @@ width:100%;
     margin:5px 10px 10px 2px;
 }
 
-
-.contact-us{
-    display: flex;
-    margin: 10px 50px;
-   
-}
-
-.rel-contact-us{
-    float:right;
-    margin:2% 9% 1% 4%;
-    padding:1%;
-    text-align: left;
-}
-.rel-contact-us > p{
-    color:#fff;
-}
-.image-contact-us{
-    float:left;
-    margin:0 7%;
-    padding:2%;
-    align-items: center;
-}
-.form-contact{
-    /* float:left; */
-    align-items: center;
-    text-align: left;
-    margin:0 auto 10% auto;
-    padding:0 2%;
-}
-.form-group{
-    display:flex;
-    margin:1%;
-}
-
-.input-form{
-    border:1px solid silver;
-    border-radius: 7px;
-   padding:0.5em;
-   margin: 0.3em;
-   background: linear-gradient(180deg, #2C2D35 0%, #14151A 100%);
-   text-align:left;
-}
-.submit-form{
-    width:160px;
-    height:40px;
-    border-radius: 12px;
-    padding:10px 24px;
-    gap:10px;
-    background-color: #DEB645;
-}
 
 
 .not-found{

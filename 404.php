@@ -18,4 +18,25 @@ $image_notfound = get_field('image_notfound');
   <?= $image_notfound ?>
   </div>
 
+  <?php
+
+$my_query = array("post_type" => "comment","posts_per_page" => 6);
+$query1 = new WP_Query($my_query);
+while($query1->have_posts()) : $query1->the_post();
+
+?>
+<div class="card">
+  <div class="card-img">
+     <img src="./wp-content/themes/yoozmove/assets/img/logo.svg" />
+  </div>
+  <div class="card-comment">
+    <h5 class="card-user"><?php the_author(); ?></h5>
+    <h6 class="card-time"><?= the_time();?></h6>
+    <p><?php the_content(); ?></p>
+  </div>
+</div>
+
+
+<?php endwhile; wp_reset_postdata(); ?>
+
 <?php get_footer(); ?>

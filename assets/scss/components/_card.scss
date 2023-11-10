@@ -1,35 +1,34 @@
 @use '../utils' as *;
 
 .card{
-    border: 1px solid $gray1;
+    border-bottom: 1px solid $gray3;
     margin: 1rem;
     padding: 1rem;
     text-align: left;
-
-    
-    .card-comment{
-        color:#fff;
-        position:relative;
-    }
-    .card-header{
-       color: $yellow;
-       position:relative;
-      
-       h5{
-
-        a{
-            color:$white;
-           }
-       }
-      
-    }
-    .card-body{
-       color: $white;
-       padding-left:2rem;  
-
-       p{
-        color:$white;
-       }
-     }
+    display:flex;
 }
 
+.card-img{
+    img{
+        width:2.5rem;
+    }
+    
+}
+.card-user{
+    color: #fff;
+    display: inline-flex;
+    padding: 0.3rem 0.5rem 0rem 1.1rem;
+}
+.card-time{
+    display: inline-flex;
+    color:$gray3;
+
+}
+
+.card-comment{
+    margin:-1rem 1rem;
+    p{
+        margin:0 0 0.5rem 2rem;
+        color:$gray3
+    }
+}

@@ -76,28 +76,34 @@ div {
 }
 
 .card {
-  border: 1px solid #2c2d35;
+  border-bottom: 1px solid hsl(220, 2%, 64%);
   margin: 1rem;
   padding: 1rem;
   text-align: left;
+  display: flex;
 }
-.card .card-comment {
+
+.card-img img {
+  width: 2.5rem;
+}
+
+.card-user {
   color: #fff;
-  position: relative;
+  display: inline-flex;
+  padding: 0.3rem 0.5rem 0rem 1.1rem;
 }
-.card .card-header {
-  color: #deb645;
-  position: relative;
+
+.card-time {
+  display: inline-flex;
+  color: hsl(220, 2%, 64%);
 }
-.card .card-header h5 a {
-  color: #ffffff;
+
+.card-comment {
+  margin: -1rem 1rem;
 }
-.card .card-body {
-  color: #ffffff;
-  padding-left: 2rem;
-}
-.card .card-body p {
-  color: #ffffff;
+.card-comment p {
+  margin: 0 0 0.5rem 2rem;
+  color: hsl(220, 2%, 64%);
 }
 
 footer {

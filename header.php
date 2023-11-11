@@ -12,13 +12,7 @@ $logo_header = get_field('logo');
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="<?php bloginfo('template_url');?>/assets/sass/Pages/contact.scss"> -->
-  <!-- <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/bootstrap.min.css "> -->
-  <!-- <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/assets/css/fontawesome-min.css"> -->
   <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
-  
-
-  <!--<script href="/wp-content/themes/theme-init/theme-init/assets/js/dist/bootstrap.bundle.min.js" />-->
   
 	<?php wp_head() ?>
 

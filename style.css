@@ -1611,31 +1611,8 @@ width:100%;
     font-size: 32px;
     text-align: center;
 }
-.btn-notfound{
-    width:189px;
-    height:53px;
-    border-radius: 12px;
-    padding: 12px 24px;
-    gap:10px;
-    color:#000;
-    background: #DEB645;
-    margin:0 28%;
-}
-input.btn-notfound {
-    text-align: center;
-    color:#000 !important;
-}
-.img-not-found{
-    width:538px;
-    height:434.63px;
-    top:460px;
-    left:371px;
-    margin:0 0 20% 0;
-}
-.img-not-found >img{
-    width:90%;
-    margin:0 90% ;
-}
+
+
 
 
 

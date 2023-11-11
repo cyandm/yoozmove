@@ -1,1 +1,24 @@
 @use '../utils' as *;
+.img-not-found{
+    width: 34rem;
+   
+    margin: 10% 0 14% 0;
+    img{
+         width:90%;
+    margin:0 90% ;
+    }
+   
+}
+.btn-notfound{
+width: 5rem;
+    border-radius: 12px;
+    padding: 2% 5%;
+    gap: 10px;
+    color: $black;
+    background: $yellow;
+    margin: 0 10rem;
+    input {
+        text-align: center;
+        color:$black !important;
+    }
+}

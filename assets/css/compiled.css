@@ -260,6 +260,29 @@ input#search {
   width: 100%;
 }
 
+.img-not-found {
+  width: 34rem;
+  margin: 10% 0 14% 0;
+}
+.img-not-found img {
+  width: 90%;
+  margin: 0 90%;
+}
+
+.btn-notfound {
+  width: 5rem;
+  border-radius: 12px;
+  padding: 2% 5%;
+  gap: 10px;
+  color: #000;
+  background: #deb645;
+  margin: 0 10rem;
+}
+.btn-notfound input {
+  text-align: center;
+  color: #000 !important;
+}
+
 main.contact-us-page {
   background-color: #2C2D35 !important;
   padding: 1px;

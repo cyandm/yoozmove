@@ -15,7 +15,8 @@ $image_notfound = get_field('image_notfound');
   <br/>
   </div>
   <div class="img-not-found">
-  <?= $image_notfound ?>
+  
+  <img src="<?= get_stylesheet_directory_uri() ?>/assets/img/not.svg" />
   </div>
 
   <?php
@@ -27,7 +28,7 @@ while($query1->have_posts()) : $query1->the_post();
 ?>
 <div class="card">
   <div class="card-img">
-     <img src="./wp-content/themes/yoozmove/assets/img/logo.svg" />
+     <img src="/wp-content/themes/yoozmove/assets/img/logo.svg" />
   </div>
   <div class="card-comment">
     <h5 class="card-user"><?php the_author(); ?></h5>

@@ -30,13 +30,14 @@
   isolation: isolate;
   text-decoration: none;
   list-style-type: none;
-  font-size: 22px;
+  font-size:1.25rem;
   color: #fff;
   font-weight: 400;
   padding:0 0.3rem;
   a{
     color:$white;
     text-decoration: none;
+    font-family:peyda;
   }
 }
  }
@@ -69,7 +70,6 @@
 .header-content {
   form{
   float: right;
-  padding-left: 0.5rem;
   display:flex;
   }
 }
@@ -96,8 +96,8 @@ input#search {
 }
 .phone{
   display:flex;
-  width: 170px;
-  height: 50px;
+  width:10rem;
+  height: 3rem;
   border-radius: 12px;
   border: 1px solid gray;
   background: gray;

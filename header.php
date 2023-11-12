@@ -28,10 +28,10 @@ $logo_header = get_field('logo');
           <form action="/">
 							<input class="search" type="search" placeholder="search"
 								value="<?php the_search_query(); ?>" name="s" id="search" />
-                <img class="search-logo" src="../wp-content/themes/theme-init/yoozmove/assets/img/search-logo.svg" />
+                <img class="search-logo" src="<?php bloginfo('template_url'); ?>/assets/img/search-logo.svg" />
 					</form>
           <div class="phone"><p><?= $number = get_field('phone' , get_the_ID()); ?></p>
-          <?= $logo_header = get_field('logo'); ?><img src="../wp-content/themes/theme-init/yoozmove/assets/img/call.svg" />
+          <?= $logo_header = get_field('logo'); ?><img src="<?php bloginfo('template_url'); ?>/assets/img/call.svg" />
         </div>
           <!-- </div> -->
           <!-- <div class="left-menu"> -->
@@ -39,7 +39,7 @@ $logo_header = get_field('logo');
 
           <?php wp_nav_menu( [ 'theme_location' => 'header' ] ) ?>
              </div>
-          <div class="logo"><?= $logo_header ?><img src="../wp-content/themes/theme-init/yoozmove/assets/img/logo.svg" /></div>
+          <div class="logo"><?= $logo_header ?><img src="<?php bloginfo('template_url'); ?>/assets/img/logo.svg" /></div>
           <!-- </div> -->
 
 				

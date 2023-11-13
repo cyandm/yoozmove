@@ -18,13 +18,14 @@ padding:1px;
     padding:1%;
     text-align: left;
 }
+/*@wrong*/
 .rel-contact-us > p{
     color:#fff;
 }
 .image-contact-us{
     float:left;
-    margin:0 7%;
-    padding:2%;
+    margin:0 7%;/*@wrong*/
+    padding:2%; /*@wrong*/
     align-items: center;
 }
 .form-contact{
@@ -41,11 +42,11 @@ padding:1px;
 }
 
 .input-form{
-    border:1px solid silver;
+    border:1px solid silver; /*@wrong*/
     border-radius: 7px;
    padding:0.5em;
    margin: 0.3em;
-   background: linear-gradient(180deg, #2C2D35 0%, #14151A 100%);
+   background: linear-gradient(180deg, #2C2D35 0%, #14151A 100%); /*@wrong*/
    text-align:left;
 }
 .submit-form{
@@ -59,13 +60,13 @@ padding:1px;
 
 .right{
     position:right;
-    float:right;
+    float:right; /*@wrong*/
     text-decoration: right;
     text-align:right;
 }
 .left{
     position:left;
-    float:left;
+    float:left;/*@wrong*/
     text-decoration: left;
     text-align:left;
 }

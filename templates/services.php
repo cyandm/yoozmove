@@ -1,3 +1,4 @@
+<!-- /*@wrong*/ -->
 <?php
 $title_services_1=get_field("title_service1");
 $image_services_1=get_field("image_service1");
@@ -21,6 +22,7 @@ $content_services_3=get_field("content_service3");
              </div>
              <div class="img">
              <?php the_post_thumbnail('large'); ?> 
+                         <!-- /*@wrong*/ -->
              <img src="<?php bloginfo('template_url'); ?>/assets/img/service.svg" /> 
              </div>
             </section>
@@ -32,6 +34,7 @@ $content_services_3=get_field("content_service3");
         <?php if ($title_services_1 != null) : ?>
            
            <div class="img">
+                       <!-- /*@wrong*/ -->
            <?= ($image_services_1!= null && !empty($image_services_1)) ? 
        wp_get_attachment_image($image_services_1, 'full', false, ['class' => 'left']) :
         null;

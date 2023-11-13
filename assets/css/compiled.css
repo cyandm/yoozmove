@@ -411,6 +411,23 @@ section .step {
 section .img-step {
   margin: 5rem;
 }
+section .content h1 {
+  color: #ffffff;
+  text-align: left;
+  padding: 0 6rem;
+  font-size: 26px;
+  font-weight: 700;
+}
+section .content p {
+  padding: 0 5.5rem;
+  text-align: left;
+}
+section .content .btn-welcome-blog {
+  background: #deb645;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  margin: 0 37rem 0 0;
+}
 
 .title-section {
   text-align: left;

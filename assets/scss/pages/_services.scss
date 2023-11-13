@@ -54,6 +54,26 @@ section{
         margin: 5rem;
     }
     
+       .content{
+        h1{
+            color: $white;
+            text-align: left;
+    padding: 0 6rem;
+    font-size: 26px;
+    font-weight: 700;
+        }
+        p{
+            padding:0 5.5rem;
+            text-align: left;
+        }
+        .btn-welcome-blog{
+            background: $yellow;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    margin:0 37rem 0 0;
+        }
+       } 
+    
 }
 
 

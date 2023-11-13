@@ -17,7 +17,7 @@ $number = get_field('phone' , get_the_ID());
       	<li><a href="/"><i class="fa fa-telegram"></i></a></li>
 
       </ul>
-      <img src="../wp-content/themes/theme-init/yoozmove/assets/img/footer.svg" />
+      <img src="<?php bloginfo('template_url'); ?>/assets/img/footer.svg" />
     </div>
   
     <div class="column">

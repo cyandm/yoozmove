@@ -362,4 +362,27 @@ our-story {
   color: red;
 }
 
+section {
+  display: flex !important;
+}
+section .img {
+  width: 100% !important;
+  height: 100%;
+}
+section .content {
+  width: 100rem;
+  margin: 4rem 2rem;
+}
+section .sub-service {
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.title-section {
+  text-align: left;
+  font-size: xx-large;
+}
+
 /*# sourceMappingURL=compiled.css.map */

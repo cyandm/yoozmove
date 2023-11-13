@@ -1,0 +1,29 @@
+@use '../utils' as *;
+
+
+
+section{
+    display:flex !important;
+
+    .img{
+        width:100% !important;
+        height:100%;
+    }
+    .content{
+        width:100rem;
+        margin:4rem 2rem;
+    }
+    .sub-service {
+        color: $white;
+        padding: 0.5rem 1rem;
+        font-size: 24px;
+        font-weight: 500;
+    }
+}
+
+
+   .title-section{
+        text-align: left;
+    font-size: xx-large;
+    }
+    

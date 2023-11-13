@@ -40,8 +40,8 @@ if ( isset( $_POST['email'] ) && ! empty( $_POST['email'] ) ) {
 
 
 // create comment post type
-
-
+//read thumbnails
+echo add_theme_support( 'post-thumbnails' );
 		
 
 ?>

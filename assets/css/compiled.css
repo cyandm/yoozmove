@@ -378,6 +378,13 @@ section .sub-service {
   padding: 0.5rem 1rem;
   font-size: 24px;
   font-weight: 500;
+  text-align: left;
+}
+section .content-service {
+  color: #808166;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: left;
 }
 
 .title-section {

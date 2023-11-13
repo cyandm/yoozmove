@@ -30,13 +30,32 @@ $content_services_3=get_field("content_service3");
 <section>
 
         <?php if ($title_services_1 != null) : ?>
-            <div class="content">
-           <div class="content-service"> <?= $content_services_1; ?></div><br/>
-           <div class="sub-service"> <?= $title_services_1 ?></div><br/>
-           </div> 
+           
            <div class="img">
            <?= ($image_services_1!= null && !empty($image_services_1)) ? 
        wp_get_attachment_image($image_services_1, 'full', false, ['class' => 'left']) :
+        null;
+        ?>
+           </div>
+           <div class="content">
+            <div class="sub-service"> <?= $title_services_1 ?></div><br/>
+           <div class="content-service"> <?= $content_services_1; ?></div><br/>
+           
+           </div> 
+           <?php endif; ?> 
+            
+</section>
+<section>
+
+        <?php if ($title_services_2 != null) : ?>
+            <div class="content">
+            <div class="sub-service"> <?= $title_services_2 ?></div><br/>
+           <div class="content-service"> <?= $content_services_2; ?></div><br/>
+           
+           </div> 
+           <div class="img">
+           <?= ($image_services_2!= null && !empty($image_services_2)) ? 
+       wp_get_attachment_image($image_services_2, 'full', false, ['class' => 'left']) :
         null;
         ?>
            </div>
@@ -45,35 +64,19 @@ $content_services_3=get_field("content_service3");
 </section>
 <section>
 
-        <?php if ($title_services_2 != null) : ?>
-
-            <div class="img">
-            <?= ($image_services_2!= null && !empty($image_services_2)) ? 
-       wp_get_attachment_image($image_services_2, 'full', false, ['class' => 'left']) :
-        null;
-        ?>
-           </div>
-           <div class="content">
-           <div class="content-service"> <?= $content_services_2; ?></div><br/>
-           <div class="sub-service"> <?= $title_services_2 ?></div><br/>
-           
-           </div>
-          
-           <?php endif; ?> 
-</section>
-<section>
-
         <?php if ($title_services_3 != null) : ?>
-            <div class="content">
-           <div class="content-service"> <?= $content_services_3; ?></div><br/>
-           <div class="sub-service"> <?= $title_services_3 ?></div><br/>
-           </div> 
+           
            <div class="img">
            <?= ($image_services_3!= null && !empty($image_services_3)) ? 
        wp_get_attachment_image($image_services_3, 'full', false, ['class' => 'left']) :
         null;
         ?>
            </div>
+           <div class="content">
+            <div class="sub-service"> <?= $title_services_3 ?></div><br/>
+           <div class="content-service"> <?= $content_services_3; ?></div><br/>
+           
+           </div> 
            <?php endif; ?> 
             
 </section>

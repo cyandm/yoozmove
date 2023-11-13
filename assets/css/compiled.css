@@ -327,8 +327,9 @@ main.contact-us-page {
 }
 
 .input-form {
-  border: 1px solid silver;
+  border: 1px solid hsl(220, 2%, 64%);
   border-radius: 7px;
+  height: 1.75rem;
   padding: 0.5em;
   margin: 0.3em;
   background: linear-gradient(180deg, #2C2D35 0%, #14151A 100%);
@@ -364,14 +365,24 @@ our-story {
 
 section {
   display: flex !important;
+  margin: 1rem 0.5rem;
 }
 section .img {
   width: 100% !important;
   height: 100%;
 }
 section .content {
-  width: 100rem;
+  width: 50rem;
   margin: 4rem 2rem;
+}
+section .content .text-light h3 {
+  color: #fff !important;
+  font-size: 18px;
+}
+section .content p {
+  color: hsl(220, 2%, 64%);
+  font-size: 18px;
+  padding: 1rem 16rem 1rem 0rem;
 }
 section .sub-service {
   color: #ffffff;
@@ -386,10 +397,34 @@ section .content-service {
   font-weight: 400;
   text-align: left;
 }
+section form {
+  width: 50rem;
+  margin: 1rem 2rem;
+}
+section .step {
+  width: 100%;
+  display: flex;
+  align-items: left;
+  text-align: left;
+  margin: 1rem;
+}
+section .img-step {
+  margin: 5rem;
+}
 
 .title-section {
   text-align: left;
   font-size: xx-large;
+}
+
+.bg-none {
+  background-color: rgba(255, 0, 0, 0) !important;
+}
+
+.service-form input {
+  background: blue;
+  border-radius: 0.75rem;
+  padding: 0.5rem;
 }
 
 /*# sourceMappingURL=compiled.css.map */

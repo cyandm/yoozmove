@@ -4,14 +4,27 @@
 
 section{
     display:flex !important;
+    margin:1rem 0.5rem;
 
     .img{
         width:100% !important;
         height:100%;
     }
     .content{
-        width:100rem;
+        width:50rem;
         margin:4rem 2rem;
+
+        .text-light{
+            h3{
+                color: #fff !important;
+                font-size: 18px;
+            }
+        }
+        p{
+            color:$gray3;;
+    font-size: 18px;
+    padding: 1rem 16rem 1rem 0rem;
+        }
     }
     .sub-service {
         color: $white;
@@ -26,6 +39,21 @@ section{
         font-weight: 400;
         text-align: left;
     }
+    form{
+        width:50rem;
+        margin:1rem 2rem;
+    }
+    .step{
+        width: 100%;
+    display: flex;
+    align-items: left;
+    text-align: left;
+    margin: 1rem;
+    }
+    .img-step {
+        margin: 5rem;
+    }
+    
 }
 
 
@@ -34,3 +62,14 @@ section{
     font-size: xx-large;
     }
     
+    .bg-none{
+        background-color:#ff000000 !important;
+    }
+
+    .service-form{
+        input{
+            background: blue;
+    border-radius: 0.75rem;
+    padding: 0.5rem;
+        }
+    }

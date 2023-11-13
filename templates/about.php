@@ -3,6 +3,8 @@
 
 
 /*Template Name: About Page */ ?>
+
+<!-- /*@wrong*/ -->
 <?php get_header(); 
 $image_section_one = get_field('image1');
 $text_section_one = get_field('text1');
@@ -63,6 +65,7 @@ $content_13 =get_field('content13');
 <main  class="contact-us-page  w-100">
 <div class="container-fluid ">
    <div class="our-story left">
+      <!-- /*@wrong*/ -->
       <h1>Our Story</h1>
       <p class="text-white justify text-left">Welcome to Yooz Move, where we are dedicated to serving as your trusted partner for all your moving 
          requirements in the DFW area. Our company was established by Nader Sianaki, a seasoned entrepreneur 
@@ -165,6 +168,7 @@ $content_13 =get_field('content13');
                     </div>
                 <?php endif; ?> 
          </p>
+          <!-- /*@wrong*/ -->
          <div class=" row counter d-flex">
            <div class="column">
             <div class="card">

@@ -58,19 +58,22 @@ $content_13 =get_field('content13');
 
 ?>
 
-
+<?php 
+	if ( have_posts() ) {
+		
+			 ?>
+                           
 
 <main  class="contact-us-page  w-100">
 <div class="container-fluid ">
    <div class="our-story left">
       <h1>Our Story</h1>
-      <p class="text-white justify text-left">Welcome to Yooz Move, where we are dedicated to serving as your trusted partner for all your moving 
-         requirements in the DFW area. Our company was established by Nader Sianaki, a seasoned entrepreneur 
-         renowned for his extensive expertise in logistics and operations. At Yooz Move, we prioritize delivering 
-         dependable and efficient moving services customized to meet your specific needs. With our commitment to excellence 
-         and customer satisfaction, you can trust us to ensure a seamless and stress-free moving experience.
+      <p class="text-white justify text-left"><?= the_content(); ?>
       </p>
    </div>
+   <?php 	
+	} // end if
+?>
    <div class="about1">
       
       <div class=" right text-white justify text-left">

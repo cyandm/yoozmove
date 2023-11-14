@@ -146,7 +146,7 @@ footer {
   position: absolute;
   left: 10%;
   width: 50%;
-  margin-top: 1%;
+  margin-top: 1%; /*@wrong*/
 }
 
 .desktop-menu ul {
@@ -251,13 +251,13 @@ input#search {
   width: 50px;
   height: 50px;
   margin: 2% 1% 0% 1%;
-  position: absolute;
+  position: absolute; /*@wrong*/
   left: 20px;
   top: 0px;
 }
 
 .logo img {
-  width: 100%;
+  width: 100%; /*@wrong*/
 }
 
 .img-not-found {
@@ -301,14 +301,15 @@ main.contact-us-page {
   text-align: left;
 }
 
+/*@wrong*/
 .rel-contact-us > p {
   color: #fff;
 }
 
 .image-contact-us {
   float: left;
-  margin: 0 7%;
-  padding: 2%;
+  margin: 0 7%; /*@wrong*/
+  padding: 2%; /*@wrong*/
   align-items: center;
 }
 
@@ -327,11 +328,11 @@ main.contact-us-page {
 }
 
 .input-form {
-  border: 1px solid silver;
+  border: 1px solid silver; /*@wrong*/
   border-radius: 7px;
   padding: 0.5em;
   margin: 0.3em;
-  background: linear-gradient(180deg, #2C2D35 0%, #14151A 100%);
+  background: linear-gradient(180deg, #2C2D35 0%, #14151A 100%); /*@wrong*/
   text-align: left;
 }
 
@@ -346,14 +347,14 @@ main.contact-us-page {
 
 .right {
   position: right;
-  float: right;
+  float: right; /*@wrong*/
   text-decoration: right;
   text-align: right;
 }
 
 .left {
   position: left;
-  float: left;
+  float: left; /*@wrong*/
   text-decoration: left;
   text-align: left;
 }

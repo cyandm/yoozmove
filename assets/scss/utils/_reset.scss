@@ -1,0 +1,44 @@
+@use './mixins' as *;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+i {
+  @include d_flex(row, center, center, nowrap, false, 0);
+}
+button {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background: transparent;
+  display: flex;
+  pointer-events: all;
+  cursor: pointer;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+html {
+  &.overflow-hidden {
+    overflow: hidden !important;
+  }
+}
+body {
+  overflow-x: hidden !important;
+}
+
+html {
+  overflow-x: hidden;
+}

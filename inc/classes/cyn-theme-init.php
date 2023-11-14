@@ -1,6 +1,6 @@
 <?php
 
-if ( ! class_exists( 'cyn_theme_init' ) ) {
+if ( ! class_exists( 'cyn-theme-init' ) ) {
 	class cyn_theme_init {
 		public $build, $ver;
 
@@ -20,8 +20,8 @@ if ( ! class_exists( 'cyn_theme_init' ) ) {
 
 		public function cyn_enqueue_files() {
 
-			$css_path = $this->build ? '/assets/css/final.css' : '/assets/css/compiled.css';
-			$js_path = $this->build ? '/assets/js/dist/scripts.bundle.min.js' : '/assets/js/dist/scripts.bundle.js';
+			$css_path = $this->build ? '/css/compiled.css' : '/css/final.css';
+			$js_path = $this->build ? '/js/dist/scripts.bundle.min.js' : '/js/dist/scripts.bundle.js';
 
 			wp_enqueue_style( 'cyn-theme', get_stylesheet_directory_uri() . $css_path, [], $this->ver );
 			wp_enqueue_style( 'cyn-style', get_stylesheet_directory_uri() );
@@ -60,13 +60,7 @@ if ( ! class_exists( 'cyn_theme_init' ) ) {
 
 			register_nav_menus( [ 
 				'header' => 'Header',
-				'footer' => 'Footer',
-				'subfooter1' =>'SubFooter1',
-				'subfooter2' =>'SubFooter2',
-				'subfooter3' =>'SubFooter3',
-				'subfooter4' =>'SubFooter4',
-				'subfooter5' =>'SubFooter5',
-
+				'footer' => 'Footer'
 			] );
 		}
 

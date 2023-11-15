@@ -1,19 +1,185 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @use './mixins' as *;
- *   | ^^^^^^^^^^^^^^^^^^^^
- *   '
- *   assets\scss\utils\_reset.scss 1:1  @forward
- *   assets\scss\utils\_index.scss 6:1  @forward
- *   assets\scss\index.scss 1:1         root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use './mixins' as *;\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   assets\\scss\\utils\\_reset.scss 1:1  @forward\a   assets\\scss\\utils\\_index.scss 6:1  @forward\a   assets\\scss\\index.scss 1:1         root stylesheet";
+:root {
+  --yellow: #deb645;
+  --gray1: #2c2d35;
+  --gray2: #808186;
+  --gray3: #a2a3a5;
+  --blue: #1c39bb;
+  --white: #ffffff;
+  --white-40: hsla(0, 0%, 100%, 0.4);
+  --linear-gradient: linear-gradient(180deg, #2c2d35 0%, #14151a 100%);
 }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+i {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  outline: none;
+  background: transparent;
+  display: flex;
+  pointer-events: all;
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+html.overflow-hidden {
+  overflow: hidden !important;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/woff2/Inter-Thin.woff2");
+  src: url("../fonts/Inter/TTF/Inter-Thin.ttf") format("truetype"), url("../fonts/Inter/woff/Inter-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/woff2/Inter-ExtraLight.woff2");
+  src: url("../fonts/Inter/TTF/Inter-ExtraLight.ttf") format("truetype"), url("../fonts/Inter/woff/Inter-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/woff2/Inter-Light.woff2");
+  src: url("../fonts/Inter/TTF/Inter-Light.ttf") format("truetype"), url("../fonts/Inter/woff/Inter-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/woff2/Inter-Regular.woff2");
+  src: url("../fonts/Inter/TTF/Inter-Regular.ttf") format("truetype"), url("../fonts/Inter/woff/Inter-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/woff2/Inter-Medium.woff2");
+  src: url("../fonts/Inter/TTF/Inter-Medium.ttf") format("truetype"), url("../fonts/Inter/woff/Inter-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/woff2/Inter-SemiBold.woff2");
+  src: url("../fonts/Inter/TTF/Inter-SemiBold.ttf") format("truetype"), url("../fonts/Inter/woff/Inter-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/woff2/Inter-Bold.woff2");
+  src: url("../fonts/Inter/TTF/Inter-Bold.ttf") format("truetype"), url("../fonts/Inter/woff/Inter-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/woff2/Inter-ExtraBold.woff2");
+  src: url("../fonts/Inter/TTF/Inter-ExtraBold.ttf") format("truetype"), url("../fonts/Inter/woff/Inter-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter/woff2/Inter-Black.woff2");
+  src: url("../fonts/Inter/TTF/Inter-Black.ttf") format("truetype"), url("../fonts/Inter/woff/Inter-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+.container {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--linear-gradient);
+}
+body ::placeholder, body {
+  font-family: Inter;
+}
+body ::placeholder {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.form_control input {
+  outline: none;
+  background: none;
+  border: none;
+}
+
+i {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+select {
+  font-family: Inter;
+}
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+  -webkit-text-fill-color: inherit;
+}
+
+input {
+  font-family: "Inter";
+}
+
+textarea {
+  font-family: "Inter";
+}
+
+/*# sourceMappingURL=compiled.css.map */

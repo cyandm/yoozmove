@@ -1,0 +1,67 @@
+%YoozMoveIconFonts {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'yooz-move-icon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  @extend %YoozMoveIconFonts;
+}
+.icon-telphone:before {
+  content: '\e901';
+}
+.icon-search:before {
+  content: '\e902';
+}
+.icon-calendar:before {
+  content: '\e903';
+}
+.icon-arrow-right:before {
+  content: '\e905';
+}
+.icon-arrow-left:before {
+  content: '\e906';
+}
+.icon-arrow:before {
+  content: '\e909';
+}
+.icon-minus:before {
+  content: '\e90b';
+}
+.icon-plus:before {
+  content: '\e90c';
+}
+.icon-close:before {
+  content: '\e90d';
+}
+.icon-paperclip:before {
+  content: '\e90e';
+}
+.icon-quote-up:before {
+  content: '\e90f';
+}
+.icon-send:before {
+  content: '\e911';
+}
+.icon-sort:before {
+  content: '\e912';
+}
+.icon-Star-fill:before {
+  content: '\e913';
+}
+.icon-Star-stroke:before {
+  content: '\e914';
+}
+.icon-timer:before {
+  content: '\e915';
+}

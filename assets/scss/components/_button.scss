@@ -1,0 +1,9 @@
+@use '../utils/' as *;
+
+.button {
+  padding: PxToRem(8) PxToRem(24) PxToRem(8) PxToRem(16);
+  border-radius: PxToRem(12);
+}
+.phone-number {
+  background-color: $white-40;
+}

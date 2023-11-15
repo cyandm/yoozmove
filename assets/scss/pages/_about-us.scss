@@ -1,0 +1,35 @@
+@use '../utils/' as *;
+main.about-us-page {
+  .same-style {
+    h2 {
+      @include font_style('header');
+      color: $yellow;
+    }
+    .description {
+      @include font_style('body');
+    }
+  }
+  .sec-1 {
+    @include d_flex(column, space-between, stretch, nowrap, true, PxToRem(32));
+
+    .content {
+      @include d_flex(row, space-between, stretch, nowrap, true, PxToRem(80));
+      .image {
+        max-height: PxToRem(492);
+        max-width: PxToRem(540);
+        overflow: hidden;
+        img {
+          object-fit: cover;
+        }
+      }
+      .text-content {
+        @include d_flex(row, $a-i: center);
+        position: relative;
+        padding-inline: PxToRem(12);
+
+        p {
+        }
+      }
+    }
+  }
+}

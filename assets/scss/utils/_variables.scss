@@ -8,6 +8,8 @@
   --white: #ffffff;
   --white-40: hsla(0, 0%, 100%, 0.4);
   --linear-gradient: linear-gradient(180deg, #2c2d35 0%, #14151a 100%);
+  --dark-gray: #282828;
+  --border-gray2-color: rgba(255, 255, 255, 0.1);
 }
 
 //color scss variable
@@ -19,6 +21,12 @@ $blue: var(--blue);
 $white: var(--white);
 $white-40: var(--white-40);
 $linear-gradient: var(--linear-gradient);
+$dark-gray: var(--dark-gray);
+$border-gray2-color: var(--border-gray2-color);
+
+//border
+$border-gray: 1px solid $white-40;
+$border-gray2: 1px solid $border-gray2-color;
 
 //font
 $font: 'Inter';

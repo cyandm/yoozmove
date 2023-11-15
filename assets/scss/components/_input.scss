@@ -1,0 +1,9 @@
+@use '../utils/' as *;
+
+.search-input {
+  border-radius: PxToRem(12);
+  padding: PxToRem(12) PxToRem(16);
+  @include d_flex(row, space-between, center, nowrap, false, PxToRem(4));
+  border: $border-gray;
+  color: $gray2;
+}

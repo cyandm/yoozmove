@@ -1,0 +1,62 @@
+@use '../utils/' as *;
+
+.site-header {
+  .header-desktop {
+    padding-top: PxToRem(36);
+    padding-bottom: PxToRem(32);
+    @include d_flex(row, space-between, center, nowrap, false, 0);
+    .header-menu-logo {
+      @include d_flex(row, space-between, center, nowrap, false, PxToRem(16));
+      .site-logo {
+      }
+      .header-menu {
+        ul {
+          @include d_flex(
+            row,
+            space-between,
+            center,
+            nowrap,
+            false,
+            PxToRem(40)
+          );
+          li {
+            color: $white;
+          }
+        }
+      }
+    }
+    .search-telephone {
+      @include d_flex(row, space-between, stretch, nowrap, false, PxToRem(8));
+
+      .phone-number {
+        @include d_flex(row, space-between, center, nowrap, false, PxToRem(8));
+        .icon-search-wrapper {
+          background-color: $yellow;
+          padding: PxToRem(8);
+          border-radius: 50%;
+          width: PxToRem(40);
+          height: PxToRem(40);
+          @include d_flex(
+            row,
+            space-between,
+            center,
+            nowrap,
+            false,
+            PxToRem(8)
+          );
+
+          i {
+            color: $dark-gray;
+            font-size: PxToRem(20);
+            font-weight: 500;
+          }
+        }
+      }
+      .search-input {
+        i {
+          font-size: PxToRem(24);
+        }
+      }
+    }
+  }
+}

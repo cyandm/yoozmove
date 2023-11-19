@@ -38,4 +38,30 @@ $phone_number = null !== get_option('cyn_phone_number_one') ? get_option('cyn_ph
 				</div>
 			</div>
 		</div>
+		<div class="header-mobile">
+			<div class="logo-site-name">
+				<?= get_custom_logo() ?>
+				<p>Yoozmove</p>
+			</div>
+			<div class="btn-call-menu">
+				<?php if (!empty($phone_number)) : ?>
+					<a href="<?= 'tel:' . $phone_number ?>">
+						<div><i class="icon-telphone"></i></div>
+					</a>
+				<?php endif; ?>
+				<div class="btn-menu-mobile"><i class="icon-sort"></i></div>
+			</div>
+		</div>
+		<div class="mobile-menu-bg">
+			<div class="mobile-menu-container">
+				<div class="btn-close-search">
+					<div class="search-input">
+						<i class="icon-search"></i>
+						<input class="" type="search" placeholder="search" value="<?php the_search_query(); ?>" name="s" id="search" />
+					</div>
+					<div class="btn-close-menu"><i class="icon-close"></i></div>
+				</div>
+				<?= wp_nav_menu(['theme_location' => 'header-menu']) ?>
+			</div>
+		</div>
 	</header>

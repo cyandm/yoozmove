@@ -9,7 +9,7 @@
   ) {
     isolation: isolate;
     border: $border-gray2;
-    width: 20%;
+    width: PxToRem(104);
     height: 100%;
     inset: 0;
     z-index: -1;

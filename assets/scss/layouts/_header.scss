@@ -1,6 +1,7 @@
 @use '../utils/' as *;
 
 .site-header {
+  position: relative;
   .header-desktop {
     padding-top: PxToRem(36);
     padding-bottom: PxToRem(32);
@@ -8,6 +9,16 @@
     .header-menu-logo {
       @include d_flex(row, space-between, center, nowrap, false, PxToRem(16));
       .site-logo {
+        a {
+          @include d_flex(
+            row,
+            space-between,
+            center,
+            nowrap,
+            false,
+            PxToRem(8)
+          );
+        }
       }
       .header-menu {
         ul {
@@ -55,6 +66,87 @@
       .search-input {
         i {
           font-size: PxToRem(24);
+        }
+      }
+    }
+    @media (max-width: 1190px) {
+      display: none;
+    }
+  }
+  .header-mobile {
+    padding-block: PxToRem(12);
+    @include d_flex(row, space-between, center, nowrap, false, PxToRem(8));
+    .logo-site-name {
+      @include d_flex(row, space-between, center, nowrap, false, PxToRem(8));
+      a {
+        @include d_flex(row, space-between, center, nowrap, false, PxToRem(8));
+      }
+      p {
+        color: $yellow;
+        font-weight: 700;
+      }
+    }
+    .btn-call-menu {
+      @include d_flex(row, space-between, center, nowrap, false, PxToRem(8));
+      div {
+        background-color: $yellow;
+        border-radius: 50%;
+        padding: PxToRem(8);
+        i {
+          @include d_flex(row, space-between, center, nowrap, false, 0);
+          font-weight: 500;
+          color: $dark-gray;
+          font-size: PxToRem(24);
+        }
+      }
+    }
+    @media (min-width: 1191px) {
+      display: none;
+    }
+  }
+  .mobile-menu-bg {
+    z-index: 10;
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    background-color: $gray-80;
+    padding: PxToRem(12);
+    &.show {
+      pointer-events: all;
+      opacity: 1;
+    }
+    .mobile-menu-container {
+      background-color: $gray1;
+      border: $border-gray;
+      padding: PxToRem(20);
+      .btn-close-search {
+        margin-bottom: PxToRem(40);
+        @include d_flex(row, space-between, center, nowrap, false, PxToRem(36));
+        .search-input {
+          flex: 1;
+        }
+        .btn-close-menu {
+          background-color: $yellow;
+          border-radius: 50%;
+          width: PxToRem(40);
+          height: PxToRem(40);
+          @include d_flex(row, center, center, nowrap, false, 0);
+
+          i {
+            @include d_flex(row, center, center, nowrap, false, 0);
+
+            font-size: PxToRem(24);
+            color: $dark-gray;
+            padding: PxToRem(8);
+          }
+        }
+      }
+      ul {
+        margin-bottom: PxToRem(20);
+        @include d_flex(column, center, flex-start, nowrap, false, PxToRem(36));
+        li {
+          @include font_style(header4);
         }
       }
     }

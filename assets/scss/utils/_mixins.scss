@@ -92,8 +92,8 @@
     line-height: auto;
   }
   @if ($type == 'header7') {
-    font-size: PxToRem(24);
-    font-weight: 400;
+    font-size: PxToRem(32);
+    font-weight: 700;
     line-height: auto;
   }
   @if ($type == 'caption') {

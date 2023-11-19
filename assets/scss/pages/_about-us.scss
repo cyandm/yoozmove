@@ -1,5 +1,7 @@
 @use '../utils/' as *;
 main.about-us-page {
+  @include d_flex(column, space-between, stretch, nowrap, true, PxToRem(48));
+
   .same-style {
     h2 {
       @include font_style('header');
@@ -13,21 +15,142 @@ main.about-us-page {
     @include d_flex(column, space-between, stretch, nowrap, true, PxToRem(32));
 
     .content {
-      @include d_flex(row, space-between, stretch, nowrap, true, PxToRem(80));
+      &:nth-child(odd) {
+        @include d_flex(row, space-between, stretch, nowrap, true, PxToRem(80));
+        @media (max-width: 800px) {
+          @include d_flex(
+            column,
+            space-between,
+            center,
+            nowrap,
+            true,
+            PxToRem(36)
+          );
+        }
+      }
+      &:nth-child(even) {
+        @include d_flex(
+          row-reverse,
+          space-between,
+          stretch,
+          nowrap,
+          true,
+          PxToRem(80)
+        );
+        @media (max-width: 800px) {
+          @include d_flex(
+            column,
+            space-between,
+            center,
+            nowrap,
+            true,
+            PxToRem(36)
+          );
+        }
+      }
       .image {
         max-height: PxToRem(492);
         max-width: PxToRem(540);
         overflow: hidden;
+        @include d_flex(column, center, flex-end, nowrap, false, 0);
+
         img {
           object-fit: cover;
         }
       }
-      .text-content {
-        @include d_flex(row, $a-i: center);
-        position: relative;
-        padding-inline: PxToRem(12);
 
-        p {
+      .text-content {
+        padding: PxToRem(8);
+        padding-block: PxToRem(36);
+        @include d_flex(column, center, flex-start, nowrap, false, PxToRem(4));
+        .number-position {
+          position: relative;
+          .number {
+            position: absolute;
+            top: PxToRem(-36);
+            @include font_style(t1);
+            color: $white-10;
+          }
+        }
+      }
+    }
+  }
+
+  .sec-3 {
+    .content {
+      @include d_flex(row, space-between, center, nowrap, false, PxToRem(80));
+      padding: PxToRem(20);
+      &:not(:last-child) {
+        border-bottom: 1px solid $white-40;
+      }
+
+      .inner-title-description {
+        @include d_flex(
+          column,
+          space-between,
+          flex-start,
+          nowrap,
+          false,
+          PxToRem(16)
+        );
+
+        width: 70%;
+        .title {
+          @include font_style(header7);
+          color: $white;
+        }
+      }
+      .image {
+        width: 30%;
+      }
+      @media (max-width: 800px) {
+        @include d_flex(
+          column-reverse,
+          space-between,
+          center,
+          nowrap,
+          true,
+          PxToRem(80)
+        );
+        .inner-title-description {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .sec-4 {
+    .container-information {
+      padding-block: PxToRem(24);
+      @include d_flex(row, space-between, stretch, wrap, true, PxToRem(0));
+      @media (max-width: 750px) {
+        @include d_flex(column, center, flex-start, nowrap, true, PxToRem(16));
+      }
+      .content {
+        width: 32%;
+        flex-basis: 32%;
+        padding: PxToRem(20);
+        &:nth-child(2),
+        &:nth-child(5) {
+          border-inline: 1px dashed $blue2;
+          @media (max-width: 750px) {
+            border-inline: none;
+          }
+        }
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          border-bottom: 1px dashed $blue2;
+          @media (max-width: 750px) {
+            border-bottom: none;
+          }
+        }
+        .title {
+          @include font_style(header3);
+          color: $yellow;
+          margin-bottom: PxToRem(16);
+        }
+        @media (max-width: 750px) {
+          width: 100%;
         }
       }
     }

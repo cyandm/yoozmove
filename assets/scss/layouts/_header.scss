@@ -122,7 +122,7 @@
       padding: PxToRem(20);
       .btn-close-search {
         margin-bottom: PxToRem(40);
-        @include d_flex(row, space-between, center, nowrap, false, PxToRem(36));
+        @include d_flex(row, space-between, center, nowrap, false, PxToRem(8));
         .search-input {
           flex: 1;
         }
@@ -131,6 +131,8 @@
           border-radius: 50%;
           width: PxToRem(40);
           height: PxToRem(40);
+
+          padding: PxToRem(8);
           @include d_flex(row, center, center, nowrap, false, 0);
 
           i {

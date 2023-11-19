@@ -1,2 +1,48 @@
+@use '../utils/' as *;
+
 main.not-found-page {
+  min-height: 100vh;
+  @media (max-width: 700px) {
+    min-height: unset;
+  }
+  section {
+    margin-top: PxToRem(92);
+
+    @include d_flex(column, center, center, nowrap, true, PxToRem(20));
+
+    p {
+      text-transform: capitalize;
+    }
+    .title {
+      @include font_style(t1);
+      color: $yellow;
+    }
+    .sub-title {
+      @include font_style(header7);
+      color: $yellow;
+    }
+    a {
+      div {
+        @include font_style(header3);
+
+        background-color: $yellow;
+        text-transform: capitalize;
+        color: $dark-gray;
+      }
+    }
+    .image-not-found {
+      margin-top: PxToRem(28);
+    }
+    @media (max-width: 699px) {
+      margin-bottom: PxToRem(200);
+      .title {
+        @include font_style('header');
+        color: $yellow;
+      }
+      .sub-title {
+        @include font_style(header6);
+        color: $yellow;
+      }
+    }
+  }
 }

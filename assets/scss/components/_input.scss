@@ -6,7 +6,6 @@
   @include d_flex(row, flex-start, center, nowrap, false, PxToRem(4));
   border: $border-gray;
   color: $gray2;
-  width: max-content;
   i {
     font-size: PxToRem(24);
   }

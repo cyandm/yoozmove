@@ -17,6 +17,8 @@ if (!class_exists('cyn-theme-init')) {
 			add_action('after_setup_theme', [$this, 'cyn_theme_setup']);
 			add_filter('wp_check_filetype_and_ext', [$this, 'cyn_allow_svg'], 10, 4);
 			add_filter('upload_mimes', [$this, 'cyn_mime_types']);
+
+			add_action('wp_head', [$this, 'cyn_enqueue_head']);
 		}
 
 
@@ -30,7 +32,7 @@ if (!class_exists('cyn-theme-init')) {
 			wp_enqueue_style('cyn-style', get_stylesheet_directory_uri());
 			wp_dequeue_style('wp-block-library');
 
-			wp_enqueue_script('cyn-theme', get_stylesheet_directory_uri() . $js_path, [], $this->ver, true);
+			wp_enqueue_script('cyn-theme', get_stylesheet_directory_uri() . $js_path, ['jquery'], $this->ver, true);
 			wp_dequeue_script('global-styles');
 		}
 
@@ -101,6 +103,18 @@ if (!class_exists('cyn-theme-init')) {
 		{
 			$mimes['svg'] = 'image/svg+xml';
 			return $mimes;
+		}
+
+		public function cyn_enqueue_head()
+		{
+			echo "<script>";
+			echo "
+				var cyn_head_script = {
+					url: '" . admin_url('admin-ajax.php') . "',
+					nonce: '" . wp_create_nonce('ajax-nonce') . "'
+				}
+			";
+			echo "</script>";
 		}
 	}
 }

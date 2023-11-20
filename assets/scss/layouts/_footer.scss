@@ -9,13 +9,14 @@ footer {
   }
   position: relative;
   .img-car {
+    @include d_flex(row, flex-end, center, nowrap, false, 0);
     position: absolute;
-    right: 0;
-    bottom: PxToRem(-36);
     overflow: hidden;
     z-index: -1;
+    inset: 0;
+    isolation: isolate;
     img {
-      width: 100%;
+      width: PxToRem(240);
     }
     @media (max-width: 950px) {
       display: none;

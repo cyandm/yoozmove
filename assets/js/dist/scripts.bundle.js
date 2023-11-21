@@ -59,4 +59,22 @@
       });
     });
   });
+
+  // assets/js/modules/faq.js
+  var btnCategoryGroup = document.querySelectorAll(".btn-category");
+  var containerQuestion = document.querySelectorAll(".container-question");
+  var btnQuestionGroup = document.querySelectorAll(".btn-question");
+  var questionContent = document.querySelectorAll(".question-content");
+  btnCategoryGroup.forEach((btnCat) => {
+    btnCat.addEventListener("click", (e) => {
+      const mustActivateEl = e.target.parentElement.parentElement;
+      mustActivateEl.toggleAttribute("active");
+    });
+  });
+  btnQuestionGroup.forEach((btnQuestion) => {
+    btnQuestion.addEventListener("click", (e) => {
+      const mustActivateContainer = e.target.parentElement;
+      mustActivateContainer.toggleAttribute("active");
+    });
+  });
 })();

@@ -1,0 +1,92 @@
+@use '../utils/' as *;
+main.faq-page {
+  @include d_flex(column, center, stretch, nowrap, false, PxToRem(48));
+
+  .image-title-faq-page {
+    @include d_flex(row, space-between, center, nowrap, true, PxToRem(80));
+    .image-faq {
+      overflow: hidden;
+      img {
+        max-height: PxToRem(480);
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+    .title-description-btn {
+      @include d_flex(column, center, stretch, nowrap, false, PxToRem(24));
+
+      h1 {
+        @include font_style('header');
+        text-transform: capitalize;
+        color: $yellow;
+        @media (max-width: 700px) {
+          @include font_style('header6');
+          color: $yellow;
+        }
+      }
+      .button {
+        background-color: $blue;
+        width: max-content;
+        @media (max-width: 500px) {
+          width: 100%;
+        }
+      }
+    }
+    @media (max-width: 700px) {
+      @include d_flex(column, center, stretch, nowrap, false, PxToRem(24));
+    }
+  }
+  .faq-wrapper {
+    h2 {
+      @include font_style('header');
+      text-transform: capitalize;
+      color: $yellow;
+      @media (max-width: 700px) {
+        @include font_style('header6');
+        color: $yellow;
+      }
+    }
+  }
+  .frequently-asked-questions {
+    @include d_flex(column, center, stretch, nowrap, false, PxToRem(12));
+
+    .container-question {
+      width: 100%;
+      display: grid;
+
+      .category-icon {
+        @include d_flex(row, space-between, center, nowrap, false, PxToRem(48));
+        padding-block: PxToRem(24);
+        i {
+          transition: all 0.3s ease-in-out;
+        }
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $white;
+      }
+
+      .grid-auto-height-transitions {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        > div {
+          text-align: justify;
+          overflow: hidden;
+        }
+      }
+
+      &[active] {
+        .grid-auto-height-transitions {
+          grid-template-rows: 1fr;
+        }
+        .category-icon {
+          i {
+            rotate: 180deg;
+          }
+        }
+      }
+    }
+  }
+}

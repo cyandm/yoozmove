@@ -1,0 +1,47 @@
+@use '../utils/' as *;
+.question-content {
+  @include d_flex(row, flex-start, stretch, nowrap, false, PxToRem(12));
+  padding-block: PxToRem(24);
+  &:not(:last-child) {
+    border-bottom: $border-gray;
+  }
+
+  i {
+    border: 1px solid $yellow;
+    padding: PxToRem(4);
+    border-radius: PxToRem(4);
+    @include d_flex(row, center, center, nowrap, false, 0);
+    transition: all 0.3s ease-in-out;
+  }
+  .question-title-description {
+    @include d_flex(column, center, stretch, nowrap, false, PxToRem(12));
+
+    .question-title {
+      @include font_style(header4);
+    }
+    .question-description {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      color: $gray3;
+      > div {
+        text-align: justify;
+        overflow: hidden;
+      }
+    }
+  }
+  &[active] {
+    .question-description {
+      grid-template-rows: 1fr;
+    }
+    i {
+      background-color: $yellow;
+      &::before {
+        content: '\e90b';
+        translate: 0 3px;
+        color: $dark-gray;
+      }
+    }
+  }
+}

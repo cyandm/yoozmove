@@ -1,5 +1,6 @@
 :root {
   --yellow: #deb645;
+  --yellow-20: #504838;
   --gray1: #2c2d35;
   --gray2: #808186;
   --gray3: #a2a3a5;
@@ -151,7 +152,7 @@ input[type=search] {
   font-style: normal;
   font-display: block;
 }
-[class^=icon-],
+main.single-post-page .sidebar-article article .title-and-content .post-content blockquote::before, [class^=icon-],
 [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "yooz-move-icon" !important;
@@ -412,6 +413,73 @@ textarea {
   content: "\e90b";
   translate: 0 3px;
   color: var(--dark-gray);
+}
+
+aside {
+  width: 30%;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 2rem;
+}
+aside .category-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 1.25rem;
+}
+aside .category-sidebar p {
+  color: var(--white);
+  font-family: "Inter";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: auto;
+  color: var(--yellow);
+}
+aside .category-sidebar .categories-names {
+  padding-inline: 1.25rem;
+}
+aside .category-sidebar .categories-names ul li {
+  transition: all 0.3s ease-in;
+  padding-bottom: 0.5rem;
+}
+aside .category-sidebar .categories-names ul li:not(:first-child) {
+  padding-top: 0.5rem;
+}
+aside .category-sidebar .categories-names ul li:not(:last-child) {
+  border-bottom: 1px solid var(--white-40);
+}
+aside .category-sidebar .categories-names ul li:hover {
+  color: var(--yellow);
+}
+aside .last-post-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 1.25rem;
+}
+aside .last-post-group p {
+  color: var(--white);
+  font-family: "Inter";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: auto;
+  color: var(--yellow);
 }
 
 footer {
@@ -1433,6 +1501,202 @@ main.faq-page .frequently-asked-questions .container-question[active] .grid-auto
 }
 main.faq-page .frequently-asked-questions .container-question[active] .category-icon i {
   rotate: 180deg;
+}
+
+main.single-post-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 1.75rem;
+}
+main.single-post-page .bread-crumb span {
+  color: var(--white-40);
+}
+main.single-post-page .sidebar-article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 0;
+}
+main.single-post-page .sidebar-article article {
+  width: 70%;
+  border-right: 1px solid var(--white-40);
+  padding-right: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 1.75rem;
+}
+main.single-post-page .sidebar-article article .post-thumbnail img {
+  aspect-ratio: 2/1;
+  object-fit: cover;
+  width: 100%;
+}
+main.single-post-page .sidebar-article article .title-and-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+main.single-post-page .sidebar-article article .title-and-content .title-date {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+main.single-post-page .sidebar-article article .title-and-content .title-date h1 {
+  color: var(--white);
+  font-family: "Inter";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: auto;
+}
+main.single-post-page .sidebar-article article .title-and-content .title-date .date-and-time {
+  color: var(--gray3);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
+}
+main.single-post-page .sidebar-article article .title-and-content .title-date .date-and-time > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.25rem;
+}
+main.single-post-page .sidebar-article article .title-and-content .post-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+main.single-post-page .sidebar-article article .title-and-content .post-content p {
+  color: var(--gray3);
+  text-align: justify;
+}
+main.single-post-page .sidebar-article article .title-and-content .post-content a {
+  color: var(--yellow);
+  text-decoration: underline;
+}
+main.single-post-page .sidebar-article article .title-and-content .post-content h2 {
+  color: var(--white);
+  font-family: "Inter";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: auto;
+}
+main.single-post-page .sidebar-article article .title-and-content .post-content h3 {
+  color: var(--white);
+  font-family: "Inter";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: auto;
+}
+main.single-post-page .sidebar-article article .title-and-content .post-content h4 {
+  color: var(--white);
+  font-family: "Inter";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: auto;
+}
+main.single-post-page .sidebar-article article .title-and-content .post-content h5 {
+  color: var(--white);
+  font-family: "Inter";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: auto;
+}
+main.single-post-page .sidebar-article article .title-and-content .post-content h6 {
+  color: var(--white);
+  font-family: "Inter";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2rem;
+  font-weight: 700;
+}
+main.single-post-page .sidebar-article article .title-and-content .post-content blockquote {
+  padding: 3.5rem 2.75rem;
+  background-color: var(--gray1);
+  border-left: 1px solid var(--white-40);
+  position: relative;
+  isolation: isolate;
+  position: relative;
+  isolation: isolate;
+}
+main.single-post-page .sidebar-article article .title-and-content .post-content blockquote::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 0;
+  height: 0;
+  display: "block";
+  height: 90%;
+  width: 4.5rem;
+  z-index: -1;
+  background-color: var(--yellow-20);
+  left: 0.5rem;
+  top: 50%;
+  translate: 0 -50%;
+}
+main.single-post-page .sidebar-article article .title-and-content .post-content blockquote::before {
+  content: "\e90f";
+  position: absolute;
+  inset: 0;
+  width: 0;
+  height: 0;
+  display: "block";
+  width: 2.25rem;
+  height: 2.25rem;
+  z-index: 5;
+  color: var(--white);
+  left: 26px;
+  top: 0;
+  font-size: 2.25rem;
+}
+main.single-post-page .sidebar-article article .title-and-content .post-content img {
+  aspect-ratio: 2/1;
+  object-fit: cover;
+  width: 100%;
 }
 
 /*# sourceMappingURL=compiled.css.map */

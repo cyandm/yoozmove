@@ -1,2 +1,126 @@
+@use '../utils/' as *;
+
 main.single-post-page {
+  @include d_flex(column, center, stretch, nowrap, false, PxToRem(28));
+
+  .bread-crumb {
+    span {
+      color: $white-40;
+    }
+  }
+
+  .sidebar-article {
+    @include d_flex(row, space-between, stretch, nowrap, false, 0);
+
+    article {
+      width: 70%;
+      border-right: $border-gray;
+      padding-right: PxToRem(20);
+      @include d_flex(column, center, stretch, nowrap, false, PxToRem(28));
+
+      .post-thumbnail {
+        img {
+          aspect-ratio: 2/1;
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+      .title-and-content {
+        @include d_flex(column, center, stretch, nowrap, false, PxToRem(16));
+
+        .title-date {
+          @include d_flex(
+            row,
+            space-between,
+            center,
+            nowrap,
+            false,
+            PxToRem(16)
+          );
+
+          h1 {
+            @include font_style('t1');
+          }
+          .date-and-time {
+            color: $gray3;
+            @include d_flex(
+              row,
+              space-between,
+              center,
+              nowrap,
+              false,
+              PxToRem(12)
+            );
+            > div {
+              @include d_flex(
+                row,
+                space-between,
+                center,
+                nowrap,
+                false,
+                PxToRem(4)
+              );
+            }
+          }
+        }
+        .post-content {
+          @include d_flex(column, center, stretch, nowrap, false, PxToRem(16));
+          p {
+            color: $gray3;
+            text-align: justify;
+          }
+          a {
+            color: $yellow;
+            text-decoration: underline;
+          }
+          h2 {
+            @include font_style('header');
+          }
+          h3 {
+            @include font_style(header7);
+          }
+          h4 {
+            @include font_style(header6);
+          }
+          h5 {
+            @include font_style(header5);
+          }
+          h6 {
+            @include font_style(body);
+            font-weight: 700;
+          }
+
+          blockquote {
+            padding: PxToRem(56) PxToRem(44);
+            background-color: $gray1;
+            border-left: $border-gray;
+            @include psudo('after', '', 0, 0, 'block', absolute) {
+              height: 90%;
+              width: PxToRem(72);
+              z-index: -1;
+              background-color: $yellow-20;
+              left: PxToRem(8);
+              top: 50%;
+              translate: 0 -50%;
+            }
+            @include psudo('before', '\e90f', 0, 0, 'block', absolute) {
+              width: PxToRem(36);
+              height: PxToRem(36);
+              z-index: 5;
+              color: $white;
+              left: 26px;
+              top: 0;
+              @extend %YoozMoveIconFonts;
+              font-size: PxToRem(36);
+            }
+          }
+          img {
+            aspect-ratio: 2/1;
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
 }

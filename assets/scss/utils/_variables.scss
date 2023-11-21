@@ -1,6 +1,7 @@
 //css color variable
 :root {
   --yellow: #deb645;
+  --yellow-20: #504838;
   --gray1: #2c2d35;
   --gray2: #808186;
   --gray3: #a2a3a5;
@@ -16,6 +17,8 @@
 }
 //color scss variable
 $yellow: var(--yellow);
+$yellow-20: var(--yellow-20);
+
 $gray1: var(--gray1);
 $gray2: var(--gray2);
 $gray3: var(--gray3);

@@ -1,0 +1,41 @@
+@use '../utils/' as *;
+
+aside {
+  width: 30%;
+  padding-left: PxToRem(20);
+  @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(32));
+  .category-sidebar {
+    @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(20));
+
+    p {
+      @include font_style(header3);
+      color: $yellow;
+    }
+    .categories-names {
+      padding-inline: PxToRem(20);
+
+      ul {
+        li {
+          transition: all 0.3s ease-in;
+          padding-bottom: PxToRem(8);
+          &:not(:first-child) {
+            padding-top: PxToRem(8);
+          }
+          &:not(:last-child) {
+            border-bottom: $border-gray;
+          }
+          &:hover {
+            color: $yellow;
+          }
+        }
+      }
+    }
+  }
+  .last-post-group {
+    @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(20));
+    p {
+      @include font_style(header3);
+      color: $yellow;
+    }
+  }
+}

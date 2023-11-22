@@ -1,26 +1,22 @@
 <?php
+$cyn_general = new cyn_general();
+
 $post_id = $args['post_id'];
 
-$categories = get_the_terms($post_id, 'category');
-$post = new WP_Query(
-    [
-        'post_type' => 'post',
-        'orderby' => 'date',
-        'order'   => 'ASC',
-        'post__not_in' => [$post_id],
-        'tax_query' => [
-            [
-                'taxonomy' => 'category',
-                'field' => 'id',
-                'terms' => '',
-            ]
-        ]
-    ]
-);
-$cats = get_categories([
-    'orderby' => 'id',
-    'hide_empty' => false,
+$all_categories = $cyn_general->category_info($post_id, "/blog/", 'category');
+
+$current_post_cats_id = [];
+foreach (get_the_category() as $cat) {
+    array_push($current_post_cats_id, $cat->term_id);
+}
+$last_blogs = new WP_Query([
+    'post_type' => 'post',
+    'posts_per_page' => 3,
+    'category__in' => $current_post_cats_id,
+    'post__not_in' => [get_the_ID()],
 ]);
+
+
 
 ?>
 
@@ -35,19 +31,18 @@ $cats = get_categories([
         <p>Topics</p>
         <div class="categories-names">
             <ul>
-                <li>All</li>
-                <?php foreach ($cats as $cat) : ?>
-                    <li><?= $cat->name ?></li>
-                <?php endforeach ?>
+                <?php for ($i = 0; $i < count($all_categories); $i++) :  ?>
+                    <li><a href="<?php echo $all_categories[$i]['link'] ?>"><?php echo $all_categories[$i]['name'] ?></a></li>
+                <?php endfor ?>
             </ul>
         </div>
     </div>
-    <?php if ($post->have_posts()) : ?>
+    <?php if ($last_blogs->have_posts()) : ?>
         <div class="last-post-group">
             <p>Last Posts</p>
             <?php
-            while ($post->have_posts()) {
-                $post->the_post();
+            while ($last_blogs->have_posts()) {
+                $last_blogs->the_post();
                 get_template_part('templates/components/cards/card', 'post-small', ['post_id' => $post_id]);
             }
             ?>

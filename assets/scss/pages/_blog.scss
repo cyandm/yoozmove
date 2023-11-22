@@ -1,0 +1,85 @@
+@use '../utils/' as *;
+
+main.blog-page {
+  @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(24));
+  .title-image-blog {
+    @include d_flex(row, space-between, center, nowrap, true, PxToRem(32));
+    .image-blog {
+      img {
+        max-height: PxToRem(572);
+        object-fit: contain;
+        width: 100%;
+      }
+    }
+    .title-description-btn {
+      @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(24));
+
+      h1 {
+        @include font_style('t1');
+        span {
+          font-weight: 700;
+          position: relative;
+          @include psudo($el: after, $content: '', $inset: 0, $display: block) {
+            position: absolute;
+            background-image: url('../img/marker.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+            inset: 0;
+            top: 100%;
+          }
+        }
+      }
+
+      a {
+        width: max-content;
+        .button {
+          background-color: $yellow;
+          color: $dark-gray;
+        }
+        @media (max-width: 500px) {
+          width: 100%;
+        }
+      }
+    }
+    @media (max-width: 800px) {
+      @include d_flex(column, center, center, nowrap, true, PxToRem(32));
+      .title-description-btn {
+        h1 {
+          @include font_style(header7);
+        }
+      }
+    }
+  }
+  #blogs {
+    @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(24));
+
+    .cat-title-search {
+      @include d_flex(row, space-between, center, nowrap, false, PxToRem(16));
+
+      h2 {
+        @include font_style(header);
+        color: $yellow;
+      }
+    }
+    .categories-names {
+      ul {
+        @include d_flex(row, flex-start, center, wrap, false, PxToRem(12));
+        li {
+          text-transform: capitalize;
+          padding: PxToRem(8) PxToRem(24);
+          border: 1px solid transparent;
+          border-radius: PxToRem(12);
+          background-color: $white-40;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            border: 1px solid $yellow;
+            background-color: transparent;
+            color: $yellow;
+          }
+        }
+      }
+    }
+  }
+}

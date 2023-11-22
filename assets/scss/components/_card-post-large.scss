@@ -1,0 +1,68 @@
+@use '../utils/' as *;
+
+.card-post-large {
+  @include d_flex(column, flex-start, stretch, nowrap, false, 0);
+
+  > div {
+    padding-block: PxToRem(24);
+    @include d_flex(row, space-between, center, nowrap, false, PxToRem(20));
+    .post-thumbnail {
+      flex-basis: 30%;
+      overflow: hidden;
+      img {
+        aspect-ratio: 3/2;
+        object-fit: cover;
+      }
+    }
+    .post-info {
+      @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(20));
+
+      flex-basis: 68%;
+      .post-title {
+        @include font_style(header3);
+      }
+      .post-expert {
+        color: $gray3;
+        @include text_over_flow();
+      }
+      .time-and-read-more {
+        @include d_flex(row, space-between, center, nowrap, false, PxToRem(20));
+        .timer-and-date {
+          p {
+            @include font_style(body);
+            color: $gray3;
+            i {
+              font-size: PxToRem(20);
+            }
+          }
+          @include d_flex(row, flex-start, center, nowrap, false, PxToRem(8));
+          .post-date {
+            @include d_flex(row, center, center, nowrap, false, 0);
+          }
+          .post-read-time {
+            @include d_flex(row, center, center, nowrap, false, 0);
+          }
+        }
+        .button {
+          a {
+            p {
+              color: $yellow;
+              @include d_flex(row, center, center, nowrap, false, PxToRem(8));
+              i {
+                translate: 0 2px;
+                rotate: 90deg;
+                font-size: PxToRem(24);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .border-bottom {
+    align-self: center;
+    height: 1px;
+    background-color: $white-40;
+    width: 70%;
+  }
+}

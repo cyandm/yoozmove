@@ -16,7 +16,43 @@ main.single-post-page {
       width: 70%;
       border-right: $border-gray;
       padding-right: PxToRem(20);
-      @include d_flex(column, center, stretch, nowrap, false, PxToRem(28));
+      @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(28));
+      .mobile-cat {
+        @include d_flex(
+          column,
+          flex-start,
+          stretch,
+          nowrap,
+          false,
+          PxToRem(16)
+        );
+
+        .title-section-last-post {
+          @include font_style(header6);
+          color: $yellow;
+        }
+        .category-mobile {
+          width: 100%;
+          border-radius: PxToRem(12);
+          padding: PxToRem(12) PxToRem(16);
+          @include d_flex(row, flex-start, center, nowrap, false, PxToRem(4));
+          border: $border-gray;
+
+          .dropdown-menu {
+            width: 100%;
+            border-radius: PxToRem(12);
+            @include d_flex(row, flex-start, center, nowrap, false, PxToRem(4));
+            color: $yellow;
+            border: none;
+            outline: none;
+            background: transparent;
+            option {
+              background: $gray1;
+              border: none;
+            }
+          }
+        }
+      }
 
       .post-thumbnail {
         img {
@@ -45,21 +81,35 @@ main.single-post-page {
             color: $gray3;
             @include d_flex(
               row,
-              space-between,
+              flex-start,
               center,
               nowrap,
               false,
               PxToRem(12)
             );
             > div {
-              @include d_flex(
-                row,
-                space-between,
-                center,
-                nowrap,
-                false,
-                PxToRem(4)
-              );
+              @include d_flex(row, center, center, nowrap, false, PxToRem(4));
+            }
+          }
+          @media (max-width: 800px) {
+            @include d_flex(
+              column,
+              flex-start,
+              stretch,
+              nowrap,
+              false,
+              PxToRem(16)
+            );
+            h1 {
+              @include font_style(header);
+            }
+            .date-and-time {
+              > div {
+                background-color: $white-40;
+                padding: PxToRem(8) PxToRem(12);
+                border-radius: PxToRem(12);
+                color: $white;
+              }
             }
           }
         }
@@ -121,6 +171,36 @@ main.single-post-page {
           }
         }
       }
+      .last-post-mobile {
+        @include d_flex(
+          column,
+          flex-start,
+          stretch,
+          nowrap,
+          false,
+          PxToRem(16)
+        );
+
+        .title-section-last-post {
+          @include font_style(header6);
+          color: $yellow;
+        }
+      }
     }
+    @media (max-width: 800px) {
+      article {
+        padding-right: unset;
+        width: 100%;
+        border-right: unset;
+      }
+      aside {
+        display: none;
+      }
+    }
+  }
+}
+.in-mobile-show {
+  @media (min-width: 801px) {
+    display: none !important;
   }
 }

@@ -10,3 +10,13 @@
     font-size: PxToRem(24);
   }
 }
+
+.comment-input {
+  width: 100%;
+  outline: none;
+  border: $border-gray;
+  background-color: $gray1;
+  border-radius: PxToRem(12);
+  padding: PxToRem(12) PxToRem(16);
+  color: $white;
+}

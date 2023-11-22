@@ -9,3 +9,14 @@
 .phone-number {
   background-color: $white-40;
 }
+.submit-button-comment {
+  @include d_flex(row, center, center, nowrap, false, PxToRem(4));
+  width: max-content;
+  padding: PxToRem(12) PxToRem(24);
+  border-radius: PxToRem(12);
+  background: $blue;
+
+  .submit[value] {
+    color: $white;
+  }
+}

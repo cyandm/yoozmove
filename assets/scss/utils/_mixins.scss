@@ -101,6 +101,11 @@
     font-weight: 500;
     line-height: auto;
   }
+  @if ($type == 'caption2') {
+    font-size: PxToRem(12);
+    font-weight: 400;
+    line-height: auto;
+  }
   @if ($type == 'body') {
     font-size: PxToRem(16);
     font-weight: 400;

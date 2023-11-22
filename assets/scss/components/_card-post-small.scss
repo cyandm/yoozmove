@@ -1,0 +1,59 @@
+@use '../utils/' as *;
+.card-post-small {
+  @include d_flex(column, flex-start, stretch, nowrap, flase, PxToRem(16));
+  padding-bottom: PxToRem(20);
+  &:not(:last-child) {
+    border-bottom: $border-gray;
+  }
+  .post-thumbnail {
+    img {
+      width: 100%;
+      aspect-ratio: 3/2;
+      object-fit: cover;
+    }
+  }
+  .post-info {
+    @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(16));
+
+    .post-title {
+      @include font_style(header4);
+      color: $white;
+    }
+    .post-expert {
+      @include font_style(body);
+      @include text_over_flow();
+      color: $gray3;
+      text-align: justify;
+    }
+    .timer-and-date {
+      p {
+        @include font_style(body);
+        color: $gray3;
+        i {
+          font-size: PxToRem(20);
+        }
+      }
+      @include d_flex(row, flex-start, center, nowrap, false, PxToRem(8));
+      .post-date {
+        @include d_flex(row, center, center, nowrap, false, 0);
+      }
+      .post-read-time {
+        @include d_flex(row, center, center, nowrap, false, 0);
+      }
+    }
+    .button {
+      background-color: $blue;
+
+      p {
+        @include font_style(body);
+
+        @include d_flex(row, center, center, nowrap, false, PxToRem(4));
+        i {
+          font-size: PxToRem(20);
+          translate: 0 2px;
+          rotate: 90deg;
+        }
+      }
+    }
+  }
+}

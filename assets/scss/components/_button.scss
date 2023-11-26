@@ -15,7 +15,7 @@
   padding: PxToRem(12) PxToRem(24);
   border-radius: PxToRem(12);
   background: $blue;
-
+  color: $white;
   .submit[value] {
     color: $white;
   }

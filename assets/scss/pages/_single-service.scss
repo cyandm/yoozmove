@@ -1,0 +1,109 @@
+@use '../utils/' as *;
+main.single-service-page {
+  @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(48));
+
+  .service-info-form {
+    @include d_flex(row, space-between, center, nowrap, true, PxToRem(16));
+
+    .title-description-service {
+      @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(16));
+
+      h1 {
+        @include font_style('header');
+        color: $yellow;
+      }
+      .content {
+        color: $gray3;
+      }
+    }
+    form {
+      @include d_flex(row, flex-start, center, wrap, true, PxToRem(16));
+      button,
+      input {
+        text-transform: capitalize;
+      }
+      .drop-down-service {
+        flex-basis: 45%;
+        max-width: 47%;
+      }
+      input {
+        flex-basis: 45%;
+        background-color: $blue;
+        max-width: 47%;
+        background-color: $gray1;
+        border: $border-gray;
+        padding: PxToRem(12) PxToRem(16);
+        border-radius: PxToRem(12);
+        outline: none;
+        color: $white;
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+          -webkit-text-fill-color: #ffffff;
+          box-shadow: inset 0 0 PxToRem(20) PxToRem(20) $gray1;
+        }
+        &[type='date']::-webkit-inner-spin-button,
+        &[type='date']::-webkit-calendar-picker-indicator {
+          color-scheme: dark;
+        }
+
+        &[type='number']::-webkit-outer-spin-button,
+        &[type='number']::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+          -moz-appearance: textfield;
+        }
+      }
+      button {
+        max-width: max-content;
+        margin-top: PxToRem(8);
+      }
+      @media (max-width: 500px) {
+        width: 100%;
+        @include d_flex(column, flex-start, center, nowrap, false, PxToRem(16));
+        button,
+        input,
+        .drop-down-service {
+          width: 100%;
+          max-width: unset;
+        }
+      }
+    }
+
+    @media (max-width: 800px) {
+      @include d_flex(column, space-between, center, nowrap, true, PxToRem(16));
+      .title-description-service {
+        h1 {
+          @include font_style('header6');
+          color: $yellow;
+        }
+      }
+    }
+  }
+  .testimonial {
+    @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(44));
+
+    h2 {
+      @include font_style('header');
+      color: $yellow;
+      @media (max-width: 800px) {
+        @include font_style('header6');
+        color: $yellow;
+      }
+    }
+  }
+  .service-comments {
+    @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(24));
+
+    h2 {
+      @include font_style('header');
+      color: $yellow;
+      text-transform: capitalize;
+      @media (max-width: 800px) {
+        @include font_style('header6');
+        color: $yellow;
+      }
+    }
+  }
+}

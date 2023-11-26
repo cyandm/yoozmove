@@ -1,0 +1,56 @@
+@use '../utils/' as *;
+.testimonial-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  .testimonial-content {
+    padding: PxToRem(24) PxToRem(20);
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      border-bottom: $border-gray;
+    }
+    &:nth-child(2),
+    &:nth-child(5) {
+      border-inline: $border-gray;
+    }
+    .testimonial-title {
+      @include font_style('header4');
+      text-transform: capitalize;
+    }
+    .testimonial-description {
+      color: $gray3;
+    }
+    .author-date {
+      @include d_flex(row, flex-start, stretch, nowrap, false, PxToRem(12));
+      .author-avatar {
+        width: PxToRem(44);
+        height: PxToRem(44);
+        overflow: hidden;
+        img {
+          border-radius: 50%;
+        }
+      }
+      .date-and-author-name {
+        .author-name {
+          @include font_style('caption');
+          margin-bottom: PxToRem(8);
+        }
+        .date {
+          @include font_style('caption2');
+          color: $gray3;
+        }
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(12));
+    .testimonial-content {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(5) {
+        border: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@use '../utils/' as *;
+
+.category-mobile {
+  width: 100%;
+  border-radius: PxToRem(12);
+  padding: PxToRem(12) PxToRem(16);
+  @include d_flex(row, flex-start, center, nowrap, false, PxToRem(4));
+  border: $border-gray;
+
+  .dropdown-menu {
+    width: 100%;
+    border-radius: PxToRem(12);
+    @include d_flex(row, flex-start, center, nowrap, false, PxToRem(4));
+    color: $yellow;
+    border: none;
+    outline: none;
+    background: transparent;
+    option {
+      background: $gray1;
+      border: none;
+    }
+  }
+}
+.drop-down-service {
+  width: 100%;
+  border-radius: PxToRem(12);
+  padding: PxToRem(12) PxToRem(16);
+  @include d_flex(row, flex-start, center, nowrap, false, PxToRem(4));
+  border: $border-gray;
+  background: $gray1;
+  .dropdown-select {
+    width: 100%;
+    border-radius: PxToRem(12);
+    @include d_flex(row, flex-start, center, nowrap, false, PxToRem(4));
+    color: $white;
+    border: none;
+    outline: none;
+    background: $gray1;
+    option {
+      width: 100%;
+      background: $gray1;
+      border: none;
+    }
+  }
+}

@@ -6,6 +6,9 @@ $all_categories = $cyn_general->category_info('', "/blog/", 'category');
 $all_blogs = new WP_Query([
     'post_type' => 'post',
     'posts_per_page' => 5,
+    'paged' => $paged,
+
+
 ]);
 
 
@@ -39,6 +42,15 @@ $all_blogs = new WP_Query([
                 <input class="" type="search" placeholder="search" value="<?php the_search_query(); ?>" name="s" id="search" />
             </div>
         </div>
+        <div class="mobile-cat">
+            <div class="category-mobile">
+                <select class="dropdown-menu">
+                    <?php for ($i = 0; $i < count($all_categories); $i++) : ?>
+                        <option <?php if ($i === 0) echo 'selected' ?> data-uri="<?php echo $all_categories[$i]['link'] ?>"><?php echo $all_categories[$i]['name'] ?></option>
+                    <?php endfor; ?>
+                </select>
+            </div>
+        </div>
         <div class="categories-names">
             <ul>
                 <?php for ($i = 0; $i < count($all_categories); $i++) :  ?>
@@ -56,6 +68,28 @@ $all_blogs = new WP_Query([
                 ?>
             </div>
         <?php endif ?>
+
+        <?php if ($all_blogs->have_posts()) : ?>
+            <div class="all-blog-group-mobile">
+                <?php
+                while ($all_blogs->have_posts()) {
+                    $all_blogs->the_post();
+                    get_template_part('templates/components/cards/card', 'post-small', ['post_id' => get_the_ID()]);
+                }
+                ?>
+            </div>
+
+        <?php endif ?>
+        <?php
+        echo "<div class='pagination-for-blog'>" . paginate_links(
+            array(
+                'total' => $all_blogs->max_num_pages,
+                'next_text' => __('<i class="icon-arrow"></i>'),
+                'prev_text' => __('<i class="icon-arrow"></i>'),
+                'prev_next' => true
+            )
+        ) . "</div>";
+        ?>
     </section>
 
 </main>

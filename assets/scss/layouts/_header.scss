@@ -37,9 +37,11 @@
       }
     }
     .search-telephone {
-      @include d_flex(row, space-between, stretch, nowrap, false, PxToRem(8));
+      @include d_flex(row, space-between, center, nowrap, false, PxToRem(8));
 
       .phone-number {
+        padding: PxToRem(8) PxToRem(24);
+        border: 1px solid transparent;
         @include d_flex(row, space-between, center, nowrap, false, PxToRem(8));
         .icon-search-wrapper {
           background-color: $yellow;
@@ -63,9 +65,13 @@
           }
         }
       }
-      .search-input {
-        i {
-          font-size: PxToRem(24);
+      form {
+        @include d_flex(row, space-between, center, nowrap, false, PxToRem(8));
+
+        .search-input {
+          i {
+            font-size: PxToRem(24);
+          }
         }
       }
     }
@@ -75,6 +81,7 @@
   }
   .header-mobile {
     padding-block: PxToRem(12);
+    margin-bottom: PxToRem(32);
     @include d_flex(row, space-between, center, nowrap, false, PxToRem(8));
     .logo-site-name {
       @include d_flex(row, space-between, center, nowrap, false, PxToRem(8));
@@ -123,8 +130,11 @@
       .btn-close-search {
         margin-bottom: PxToRem(40);
         @include d_flex(row, space-between, center, nowrap, false, PxToRem(8));
-        .search-input {
+        form {
           flex: 1;
+          .search-input {
+            flex: 1;
+          }
         }
         .btn-close-menu {
           background-color: $yellow;

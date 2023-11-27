@@ -2,12 +2,16 @@
 
 .search-input {
   border-radius: PxToRem(12);
-  padding: PxToRem(12) PxToRem(16);
+  padding: PxToRem(16) PxToRem(16);
   @include d_flex(row, flex-start, center, nowrap, false, PxToRem(4));
   border: $border-gray;
   color: $gray2;
   i {
     font-size: PxToRem(24);
+    color: $gray2;
+  }
+  input {
+    flex: 1;
   }
 }
 

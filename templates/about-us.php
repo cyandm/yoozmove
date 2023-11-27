@@ -1,6 +1,7 @@
 <?php
 
 /*Template Name: About-us Page */
+$page_id = get_queried_object_id();
 
 $section1 = get_field("section1");
 $section1_title = $section1['title'];
@@ -20,7 +21,8 @@ $section3_description = $section3['description'];
 $section3_content = $section3['content_sec_3'];
 
 
-$section4 = get_field("section4");
+$section4 = get_field("why_us", $page_id);
+
 $section4_title = $section4['title'];
 $section4_description = $section4['description'];
 $section4_content = $section4['content'];
@@ -88,10 +90,12 @@ $section4_content = $section4['content'];
             <div class="container-information">
                 <?php foreach ($section4_content as $content_group) : ?>
                     <?php if (!is_null($content_group)) : ?>
-                        <div class="content">
-                            <p class="title"><?= $content_group['title'] ?></p>
-                            <?= $content_group['description'] ?>
-                        </div>
+                        <?php if (!empty($content_group['title'])) : ?>
+                            <div class="content">
+                                <p class="title"><?= $content_group['title'] ?></p>
+                                <?= $content_group['description'] ?>
+                            </div>
+                        <?php endif ?>
                     <?php endif; ?>
                 <?php endforeach; ?>
             </div>

@@ -1,5 +1,7 @@
 <?php
 /*Template Name: Faq Page */
+
+
 $faq_information1 = get_field('faq_information')['section1'];
 $faq_information2 = get_field('faq_information')['section2'];
 
@@ -17,8 +19,8 @@ $cats = get_categories([
     'orderby' => 'id',
     'current_category' => 1,
     'hide_empty' => true,
-
 ]);
+
 $cats_id_group = [];
 $cats_name_group = [];
 foreach ($cats as $cat) {

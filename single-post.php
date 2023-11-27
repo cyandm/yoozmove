@@ -26,10 +26,15 @@ $last_blogs = new WP_Query([
     </section>
     <section class="sidebar-article">
         <article>
-            <div class="search-input in-mobile-show">
-                <i class="icon-search"></i>
-                <input class="" type="search" placeholder="search" value="<?php the_search_query(); ?>" name="s" id="search" />
-            </div>
+
+            <form action="/" method="get" class="in-mobile-show">
+                <div class="search-input">
+                    <button type="submit">
+                        <i class="icon-search"></i>
+                    </button>
+                    <input class="" type="search" placeholder="search" value="<?php the_search_query(); ?>" name="s" id="search" />
+                </div>
+            </form>
             <div class="mobile-cat  in-mobile-show">
 
                 <p>Topics</p>

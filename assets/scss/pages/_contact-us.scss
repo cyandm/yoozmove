@@ -126,6 +126,7 @@ main.contact-us-page {
           button {
             background-color: $yellow;
             padding: PxToRem(12) PxToRem(24);
+            color: $dark-gray;
             @media (max-width: 700px) {
               width: 100%;
             }

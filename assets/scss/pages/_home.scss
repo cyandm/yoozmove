@@ -1,0 +1,173 @@
+@use '../utils/' as *;
+main.home-page {
+  @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(48));
+
+  section {
+    width: 100%;
+    .title-btn {
+      @include d_flex(row, space-between, center, nowrap, false, PxToRem(24));
+    }
+    .title-section {
+      @include font_style('header');
+      color: $yellow;
+      text-transform: capitalize;
+    }
+  }
+  .hero-section-home {
+    @include d_flex(column, flex-start, center, nowrap, false, PxToRem(12));
+    text-transform: capitalize;
+    h1 {
+      @include font_style(t1);
+      color: $yellow;
+    }
+    .description-hero {
+      @include font_style(header2);
+      color: $yellow;
+    }
+  }
+  .introduce-services-home {
+    @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(24));
+
+    .service-wrapper-home {
+      @include d_flex(row, space-between, stretch, nowrap, false, PxToRem(20));
+      .title-expert-wrapper {
+        padding-right: PxToRem(20);
+        &:not(:last-child) {
+          border-inline-end: 1px solid $yellow;
+        }
+        h3 {
+          @include font_style(header3);
+          margin-bottom: PxToRem(8);
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            color: $yellow;
+          }
+        }
+        .service-expert {
+          color: $gray3;
+          @include text_over_flow($-webkit-line-clamp: 2);
+        }
+      }
+    }
+    .image-service-section {
+      img {
+        object-fit: contain;
+        width: 100%;
+        max-height: PxToRem(616);
+      }
+    }
+  }
+
+  #home-form-section {
+    @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(24));
+    .form-and-image {
+      @include d_flex(row, space-between, stretch, wrap, true, PxToRem(20));
+      form {
+        justify-content: flex-start;
+        .submit-button-comment {
+          background-color: $yellow;
+          color: $dark-gray;
+        }
+      }
+      .image-form-section {
+        img {
+          max-height: PxToRem(324);
+          object-fit: contain;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .faq-section-in-home {
+    .frequently-asked-questions {
+      @include d_flex(column, center, stretch, nowrap, false, PxToRem(12));
+
+      .container-question {
+        width: 100%;
+        display: grid;
+
+        .category-icon {
+          @include d_flex(
+            row,
+            space-between,
+            center,
+            nowrap,
+            false,
+            PxToRem(48)
+          );
+          padding-block: PxToRem(24);
+          .cat-name {
+            @include font_style(header5);
+          }
+          i {
+            transition: all 0.3s ease-in-out;
+          }
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $white;
+        }
+
+        .grid-auto-height-transitions {
+          display: grid;
+          grid-template-rows: 0fr;
+          transition: all 0.3s ease-in-out;
+          -webkit-transition: all 0.3s ease-in-out;
+          > div {
+            text-align: justify;
+            overflow: hidden;
+          }
+        }
+
+        &[active] {
+          .grid-auto-height-transitions {
+            grid-template-rows: 1fr;
+          }
+          .category-icon {
+            i {
+              rotate: 180deg;
+            }
+          }
+        }
+      }
+    }
+  }
+  .why-us {
+    .container-information {
+      padding-block: PxToRem(24);
+      @include d_flex(row, space-between, stretch, wrap, true, PxToRem(0));
+
+      .content {
+        width: 32%;
+        flex-basis: 32%;
+        padding: PxToRem(20);
+        &:nth-child(2),
+        &:nth-child(5) {
+          border-inline: 1px dashed $blue2;
+          @media (max-width: 750px) {
+            border-inline: none;
+          }
+        }
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          border-bottom: 1px dashed $blue2;
+          @media (max-width: 750px) {
+            border-bottom: none;
+          }
+        }
+        .title {
+          @include font_style(header3);
+          color: $yellow;
+          margin-bottom: PxToRem(16);
+        }
+        @media (max-width: 750px) {
+          width: 100%;
+        }
+      }
+      @media (max-width: 750px) {
+        @include d_flex(column, center, flex-start, nowrap, true, PxToRem(16));
+      }
+    }
+  }
+}

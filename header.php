@@ -31,11 +31,14 @@ $phone_number = null !== get_option('cyn_phone_number_one') ? get_option('cyn_ph
 						</div>
 					</a>
 				<?php endif; ?>
-
-				<div class="search-input">
-					<i class="icon-search"></i>
-					<input class="" type="search" placeholder="search" value="<?php the_search_query(); ?>" name="s" id="search" />
-				</div>
+				<form action="/" method="get">
+					<div class="search-input">
+						<button type="submit">
+							<i class="icon-search"></i>
+						</button>
+						<input class="" type="search" placeholder="search" value="<?php the_search_query(); ?>" name="s" id="search" />
+					</div>
+				</form>
 			</div>
 		</div>
 		<div class="header-mobile">
@@ -55,10 +58,14 @@ $phone_number = null !== get_option('cyn_phone_number_one') ? get_option('cyn_ph
 		<div class="mobile-menu-bg">
 			<div class="mobile-menu-container">
 				<div class="btn-close-search">
-					<div class="search-input">
-						<i class="icon-search"></i>
-						<input class="" type="search" placeholder="search" value="<?php the_search_query(); ?>" name="s" id="search" />
-					</div>
+					<form action="/" method="get">
+						<div class="search-input">
+							<button type="submit">
+								<i class="icon-search"></i>
+							</button>
+							<input class="" type="search" placeholder="search" value="<?php the_search_query(); ?>" name="s" id="search" />
+						</div>
+					</form>
 					<div class="btn-close-menu"><i class="icon-close"></i></div>
 				</div>
 				<?= wp_nav_menu(['theme_location' => 'header-menu']) ?>

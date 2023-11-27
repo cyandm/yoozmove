@@ -1,10 +1,7 @@
 <?php
 $post_id = get_the_ID();
 
-$testimonial = new WP_Query([
-    'post_type' => 'testimonial',
-    'posts_per_page' => 6,
-]);
+$testimonial =  isset(get_field('testimonial')['testimonial_choosed']) ? get_field('testimonial')['testimonial_choosed'] : null;
 
 ?>
 <?php get_header() ?>
@@ -19,15 +16,13 @@ $testimonial = new WP_Query([
         ?>
     </section>
 
-    <?php if ($testimonial) : ?>
+    <?php if (($testimonial)) : ?>
         <section class="testimonial">
             <h2> Hear From Our Happy Clients</h2>
             <div class="testimonial-container" id="testimonial-group">
-
                 <?php
-                while ($testimonial->have_posts()) {
-                    $testimonial->the_post();
-                    get_template_part('templates/components/cards/card', 'testimonial');
+                foreach ($testimonial as $index => $testimonial_id) {
+                    get_template_part('templates/components/cards/card', 'testimonial', ['post_id' => $testimonial_id]);
                 }
                 wp_reset_postdata();
                 ?>

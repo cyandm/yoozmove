@@ -57,6 +57,9 @@ main.faq-page {
       .category-icon {
         @include d_flex(row, space-between, center, nowrap, false, PxToRem(48));
         padding-block: PxToRem(24);
+        .cat-name {
+          @include font_style(header5);
+        }
         i {
           transition: all 0.3s ease-in-out;
         }

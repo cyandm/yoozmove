@@ -1,0 +1,79 @@
+@use '../../utils/' as *;
+
+main.service-archive-page {
+  @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(40));
+
+  .hero-section-archive {
+    @include d_flex(row, space-between, center, nowrap, false, PxToRem(32));
+    .image-hero {
+      width: 30%;
+      img {
+        width: 100%;
+        object-fit: contain;
+        max-height: PxToRem(500);
+      }
+    }
+    .information-hero {
+      width: 70%;
+
+      @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(24));
+
+      h1 {
+        @include font_style(t1);
+        text-transform: capitalize;
+      }
+      .description-hero {
+        @include font_style(header4);
+      }
+      a {
+        width: max-content;
+        .button {
+          background-color: $yellow;
+          color: $dark-gray;
+          text-transform: capitalize;
+        }
+        @media (max-width: 500px) {
+          width: 100%;
+        }
+      }
+    }
+    @media (max-width: 1000px) {
+      .image-hero {
+        width: 40%;
+      }
+      .information-hero {
+        width: 60%;
+      }
+    }
+    @media (max-width: 750px) {
+      @include d_flex(column, flex-start, center, nowrap, false, PxToRem(40));
+      .image-hero {
+        width: 100%;
+      }
+      .information-hero {
+        width: 100%;
+        h1 {
+          @include font_style(header7);
+        }
+        .description-hero {
+          @include font_style(body);
+        }
+      }
+    }
+  }
+  #services-section {
+    @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(40));
+    .title-wrapper {
+      @include font_style('header');
+      text-transform: capitalize;
+      color: $yellow;
+      @media (max-width: 750px) {
+        @include font_style(header6);
+        color: $yellow;
+      }
+    }
+    .services-container {
+      @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(44));
+    }
+  }
+}

@@ -72,17 +72,20 @@ if (!class_exists('cyn_general')) {
                 [
                     'name' => 'All',
                     'link' => $url_all,
-                    'in_category_exist' => true
+                    'in_category_exist' => true,
+                    'count' => 1
                 ]
             ];
 
-            for ($i = 0; $i < count($categories); $i++) {
+
+            foreach ($categories as $index => $category) {
                 array_push(
                     $info_categories,
                     [
-                        'name' => $categories[$i]->name,
-                        'link' => $categories_link[$i],
-                        'in_category_exist' => in_array($categories[$i]->term_id, $current_post_cat_ids)
+                        'name' => $category->name,
+                        'link' =>  $categories_link[$index],
+                        'in_category_exist' => in_array($category->term_id, $current_post_cat_ids),
+                        'count' => $category->count
                     ]
                 );
             }

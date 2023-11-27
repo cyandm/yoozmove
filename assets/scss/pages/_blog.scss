@@ -69,9 +69,14 @@ main.blog-page {
         justify-content: flex-start;
         h2 {
           margin-top: PxToRem(32);
+          @include font_style(header6);
+          color: $yellow;
         }
-        .search-input {
+        form {
           width: 100%;
+          .search-input {
+            width: 100%;
+          }
         }
       }
     }
@@ -91,6 +96,11 @@ main.blog-page {
           background-color: $white-40;
           transition: all 0.3s ease-in-out;
           &:hover {
+            border: 1px solid $yellow;
+            background-color: transparent;
+            color: $yellow;
+          }
+          &.current {
             border: 1px solid $yellow;
             background-color: transparent;
             color: $yellow;

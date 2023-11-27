@@ -3,6 +3,8 @@
 /*Template Name: Blog Page */
 
 $all_categories = $cyn_general->category_info('', "/blog/", 'category');
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
 $all_blogs = new WP_Query([
     'post_type' => 'post',
     'posts_per_page' => 5,
@@ -37,16 +39,23 @@ $all_blogs = new WP_Query([
     <section id="blogs">
         <div class="cat-title-search">
             <h2>Topics</h2>
-            <div class="search-input">
-                <i class="icon-search"></i>
-                <input class="" type="search" placeholder="search" value="<?php the_search_query(); ?>" name="s" id="search" />
-            </div>
+            <form action="/" method="get">
+                <div class="search-input">
+                    <button type="submit">
+                        <i class="icon-search"></i>
+                    </button>
+                    <input class="" type="search" placeholder="search" value="<?php the_search_query(); ?>" name="s" id="search" />
+                </div>
+            </form>
         </div>
         <div class="mobile-cat">
             <div class="category-mobile">
                 <select class="dropdown-menu">
+
                     <?php for ($i = 0; $i < count($all_categories); $i++) : ?>
-                        <option <?php if ($i === 0) echo 'selected' ?> data-uri="<?php echo $all_categories[$i]['link'] ?>"><?php echo $all_categories[$i]['name'] ?></option>
+                        <?php if ($all_categories[$i]['count'] >= 1) : ?>
+                            <option <?php if ($i === 0) echo 'selected' ?> data-uri="<?php echo $all_categories[$i]['link'] ?>"><?php echo $all_categories[$i]['name'] ?></option>
+                        <?php endif; ?>
                     <?php endfor; ?>
                 </select>
             </div>
@@ -54,7 +63,12 @@ $all_blogs = new WP_Query([
         <div class="categories-names">
             <ul>
                 <?php for ($i = 0; $i < count($all_categories); $i++) :  ?>
-                    <li><a href="<?php echo $all_categories[$i]['link'] ?>"><?php echo $all_categories[$i]['name'] ?></a></li>
+                    <?php if ($all_categories[$i]['count'] >= 1) : ?>
+                        <a href="<?php echo $all_categories[$i]['link'] ?>">
+                            <li class="<?php if ($i === 0) echo 'current' ?>"><?php echo $all_categories[$i]['name'] ?></li>
+                        </a>
+                    <?php endif; ?>
+
                 <?php endfor ?>
             </ul>
         </div>

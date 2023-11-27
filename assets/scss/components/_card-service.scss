@@ -1,0 +1,75 @@
+@use '../utils/' as *;
+.service-content {
+  &:nth-child(odd) {
+    @include d_flex(row, space-between, center, nowrap, false, PxToRem(32));
+  }
+  &:nth-child(even) {
+    @include d_flex(
+      row-reverse,
+      space-between,
+      center,
+      nowrap,
+      false,
+      PxToRem(32)
+    );
+  }
+  .title-expert-service {
+    @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(8));
+
+    width: 65%;
+    h2 {
+      @include font_style(header3);
+      text-transform: capitalize;
+    }
+    .service-expert {
+      color: $gray3;
+      margin-bottom: PxToRem(24);
+    }
+    a {
+      div {
+        text-transform: capitalize;
+      }
+    }
+    a.button-desktop {
+      width: max-content;
+      @media (max-width: 700px) {
+        display: none;
+      }
+    }
+  }
+  .service-thumbnail {
+    width: 35%;
+    img {
+      width: 100%;
+      object-fit: contain;
+      max-height: PxToRem(400);
+    }
+  }
+  a.button-mobile {
+    width: 100%;
+    div {
+      width: 100%;
+    }
+    @media (min-width: 701px) {
+      display: none;
+    }
+  }
+  @media (max-width: 800px) {
+    .title-expert-service {
+      width: 60%;
+    }
+    .service-thumbnail {
+      width: 40%;
+    }
+  }
+  @media (max-width: 700px) {
+    &:nth-child(even),
+    &:nth-child(odd) {
+      @include d_flex(column, flex-start, center, nowrap, false, PxToRem(40));
+      .title-expert-service,
+      .service-thumbnail {
+        width: 100%;
+      }
+    }
+  }
+}

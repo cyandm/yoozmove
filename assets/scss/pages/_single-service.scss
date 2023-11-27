@@ -17,7 +17,7 @@ main.single-service-page {
       }
     }
     form {
-      @include d_flex(row, flex-start, center, wrap, true, PxToRem(16));
+      @include d_flex(row, flex-end, center, wrap, true, PxToRem(16));
       button,
       input {
         text-transform: capitalize;
@@ -58,6 +58,7 @@ main.single-service-page {
       button {
         max-width: max-content;
         margin-top: PxToRem(8);
+        align-self: flex-start;
       }
       @media (max-width: 500px) {
         width: 100%;

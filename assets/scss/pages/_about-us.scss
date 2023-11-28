@@ -75,7 +75,84 @@ main.about-us-page {
       }
     }
   }
+  .sec-2 {
+    @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(24));
+    .container-information {
+      @include d_flex(row, space-between, center, nowrap, false, PxToRem(24));
+      .image-group {
+        @include d_flex(row, space-between, unset, nowrap, true, PxToRem(32));
+        display: flex;
+        max-height: PxToRem(516);
+        div {
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 90%;
+          }
+        }
+        .image-bottom-container {
+          @include d_flex(row, stretch, flex-end, nowrap, false, PxToRem(32));
+        }
+        .image-top-container {
+          @include d_flex(row, stretch, flex-start, nowrap, false, PxToRem(32));
+        }
+      }
+      .information-organ {
+        flex: 1;
+        @include d_flex(
+          column,
+          flex-start,
+          stretch,
+          nowrap,
+          false,
+          PxToRem(32)
+        );
+        .container-numbers-text {
+          @include d_flex(row, stretch, center, nowrap, false, PxToRem(0));
 
+          .inner-number-and-text {
+            padding: PxToRem(32) PxToRem(16);
+
+            @include d_flex(
+              column,
+              flex-start,
+              center,
+              nowrap,
+              false,
+              PxToRem(16)
+            );
+            .number {
+              @include font_style(header7);
+              color: $yellow;
+            }
+            .text {
+              @include font_style(header4);
+            }
+          }
+        }
+      }
+      @media (max-width: 900px) {
+        @include d_flex(column, flex-start, center, nowrap, false, PxToRem(16));
+        .information-organ {
+          .container-numbers-text {
+            flex-wrap: wrap;
+            .inner-number-and-text {
+              flex: 1;
+              flex-basis: 44%;
+              &:nth-child(2),
+              &:nth-child(4) {
+                border-inline-start: $border-gray;
+              }
+              &:nth-child(1),
+              &:nth-child(2) {
+                border-block-end: $border-gray;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   .sec-3 {
     .content {
       @include d_flex(row, space-between, center, nowrap, false, PxToRem(80));
@@ -85,6 +162,7 @@ main.about-us-page {
       }
 
       .inner-title-description {
+        flex: 1;
         @include d_flex(
           column,
           space-between,
@@ -94,14 +172,16 @@ main.about-us-page {
           PxToRem(16)
         );
 
-        width: 70%;
         .title {
           @include font_style(header7);
           color: $white;
         }
       }
       .image {
-        width: 30%;
+        min-width: PxToRem(200);
+        img {
+          width: 100%;
+        }
       }
       @media (max-width: 800px) {
         @include d_flex(

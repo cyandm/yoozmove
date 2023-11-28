@@ -87,3 +87,44 @@ jQuery(document).ready(($) => {
     });
   });
 });
+
+jQuery(document).ready(($) => {
+  const resumeForm = $('#resume-form');
+  const resumeInput = document.querySelectorAll('#resume-form .data');
+
+  const resumeFormSubmit = $('#resume-form #resume-form-submit');
+
+  $(resumeForm).on('submit', (e) => {
+    e.preventDefault();
+
+    const formDataArrayResume = $(resumeForm).serializeArray();
+    const formDataResume = objectifyFormArray(formDataArrayResume);
+
+    if (!formDataResume.agreement) formDataResume.agreement = 'false';
+
+    $.ajax({
+      url: cyn_head_script.url,
+      type: 'post',
+      data: {
+        action: 'send_resume_form',
+        _nonce: cyn_head_script.nonce,
+        data: formDataResume,
+      },
+      success: (res) => {
+        console.warn(res);
+        resumeInput.forEach((el) => {
+          el.value = '';
+        });
+        $(resumeFormSubmit).text('Sent!');
+        setTimeout(() => {
+          $(resumeFormSubmit).text('Send Message');
+        }, 1000);
+      },
+      error: (err) => {
+        console.error(err);
+        $(resumeFormSubmit).removeClass('pending');
+        $(resumeFormSubmit).addClass('error');
+      },
+    });
+  });
+});

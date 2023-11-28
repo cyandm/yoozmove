@@ -18,6 +18,7 @@
 
     .question-title {
       @include font_style(header4);
+      text-align: left;
     }
     .question-description {
       display: grid;
@@ -26,7 +27,6 @@
       -webkit-transition: all 0.3s ease-in-out;
       color: $gray3;
       > div {
-        text-align: justify;
         overflow: hidden;
       }
     }

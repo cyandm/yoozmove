@@ -1,0 +1,42 @@
+@use '../utils/' as *;
+.post-home-content {
+  @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(12));
+
+  &:not(:last-child) {
+    padding-right: PxToRem(16);
+    border-right: $border-gray;
+  }
+  .thumbnail-post-home {
+    img {
+      max-height: PxToRem(292);
+      object-fit: cover;
+      aspect-ratio: 3/2;
+      width: 100%;
+    }
+  }
+  .post-info-home {
+    transition: all 0.3s ease-in;
+
+    .post-title {
+      @include font_style(header3);
+      transition: all 0.3s ease-in;
+    }
+    .post-expert {
+      color: $gray3;
+      @include text_over_flow();
+      transition: all 0.3s ease-in;
+    }
+    .post-date {
+      @include d_flex(row, flex-start, center, nowrap, false, PxToRem(4));
+      color: $gray3;
+    }
+    &:hover {
+      .post-title {
+        color: $yellow;
+      }
+      .post-expert {
+        color: $white;
+      }
+    }
+  }
+}

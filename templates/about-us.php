@@ -60,7 +60,23 @@ $section4_content = $section4['content'];
         <div class="description"><?= $section2_description ?></div>
         <?php if (!is_null($section2_content)) : ?>
             <div class="container-information">
-
+                <div class="image-group">
+                    <div class="image-bottom-container"><?= wp_get_attachment_image($section2_content['image_1'], 'full') ?></div>
+                    <div class="image-top-container"><?= wp_get_attachment_image($section2_content['image_2'], 'full') ?></div>
+                </div>
+                <div class="information-organ">
+                    <div><?= $section2_content['description'] ?></div>
+                    <div class="container-numbers-text">
+                        <?php foreach ($section2_content['information'] as $index => $content) : ?>
+                            <?php if (!is_null($content)) : ?>
+                                <div class="inner-number-and-text">
+                                    <p class="number"><?= $content['number'] ?></p>
+                                    <p class="text"><?= $content['text'] ?></p>
+                                </div>
+                            <?php endif ?>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
             </div>
         <?php endif; ?>
     </section>

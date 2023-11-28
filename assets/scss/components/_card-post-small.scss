@@ -1,5 +1,6 @@
 @use '../utils/' as *;
 .card-post-small {
+  padding-block: PxToRem(16);
   @include d_flex(column, flex-start, stretch, nowrap, flase, PxToRem(16));
   padding-bottom: PxToRem(20);
   &:not(:last-child) {

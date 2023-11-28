@@ -9,8 +9,6 @@ $all_blogs = new WP_Query([
     'post_type' => 'post',
     'posts_per_page' => 5,
     'paged' => $paged,
-
-
 ]);
 
 
@@ -51,7 +49,6 @@ $all_blogs = new WP_Query([
         <div class="mobile-cat">
             <div class="category-mobile">
                 <select class="dropdown-menu">
-
                     <?php for ($i = 0; $i < count($all_categories); $i++) : ?>
                         <?php if ($all_categories[$i]['count'] >= 1) : ?>
                             <option <?php if ($i === 0) echo 'selected' ?> data-uri="<?php echo $all_categories[$i]['link'] ?>"><?php echo $all_categories[$i]['name'] ?></option>

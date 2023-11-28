@@ -1,7 +1,7 @@
 <?php
 $cyn_general = new cyn_general();
 
-$post_id = $args['post_id'];
+$post_id = isset($args['post_id']) ? isset($args['post_id']) :  get_the_ID();
 
 $reading_time = $cyn_general->cyn_reading_time($post_id);
 

@@ -61,6 +61,7 @@ footer {
       @include font_style(header5);
     }
     div > ul {
+      text-transform: capitalize;
       margin-top: PxToRem(16);
       @include d_flex(column, space-between, stretch, wrap, false, PxToRem(8));
     }

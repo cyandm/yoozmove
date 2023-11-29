@@ -6,6 +6,7 @@ main.about-us-page {
     h2 {
       @include font_style('header');
       color: $yellow;
+      text-transform: capitalize;
     }
     .description {
       @include font_style('body');
@@ -175,6 +176,7 @@ main.about-us-page {
         .title {
           @include font_style(header7);
           color: $white;
+          text-transform: capitalize;
         }
       }
       .image {
@@ -202,7 +204,7 @@ main.about-us-page {
     .container-information {
       padding-block: PxToRem(24);
       @include d_flex(row, space-between, stretch, wrap, true, PxToRem(0));
-      @media (max-width: 750px) {
+      @media (max-width: 1000px) {
         @include d_flex(column, center, flex-start, nowrap, true, PxToRem(16));
       }
       .content {
@@ -212,7 +214,7 @@ main.about-us-page {
         &:nth-child(2),
         &:nth-child(5) {
           border-inline: 1px dashed $blue2;
-          @media (max-width: 750px) {
+          @media (max-width: 1000px) {
             border-inline: none;
           }
         }
@@ -220,7 +222,7 @@ main.about-us-page {
         &:nth-child(2),
         &:nth-child(3) {
           border-bottom: 1px dashed $blue2;
-          @media (max-width: 750px) {
+          @media (max-width: 1000px) {
             border-bottom: none;
           }
         }
@@ -229,7 +231,7 @@ main.about-us-page {
           color: $yellow;
           margin-bottom: PxToRem(16);
         }
-        @media (max-width: 750px) {
+        @media (max-width: 1000px) {
           width: 100%;
         }
       }

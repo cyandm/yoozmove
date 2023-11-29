@@ -10,6 +10,9 @@
 
 html {
   scroll-behavior: smooth;
+  &.overflow-hidden {
+    overflow-y: hidden;
+  }
 }
 body {
   background: $linear-gradient;
@@ -63,4 +66,8 @@ input {
 
 textarea {
   font-family: 'Inter';
+}
+
+.capitalize {
+  text-transform: capitalize;
 }

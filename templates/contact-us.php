@@ -3,7 +3,6 @@
 /*Template Name: Contact-us Page */
 $title_page = null !== get_field('title_page_contact_us') ? get_field('title_page_contact_us') : 'empty';
 
-
 $phone_number = null !== get_option('cyn_phone_number_one') ? get_option('cyn_phone_number_one') : '#';
 $phone_number2 = null !== get_option('cyn_phone_number_two') ? get_option('cyn_phone_number_two') : '#';
 

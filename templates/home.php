@@ -18,12 +18,8 @@ if (!is_null(get_posts($about_us_template_query_args))) {
     $about_us_page_id = get_posts($about_us_template_query_args)[0];
 }
 
-
 $section3 = get_field("section1", $about_us_page_id);
 $section3_content = $section3['content'];
-
-
-
 
 $why_us = (null !== (get_field("why_us", $page_id))) ? get_field("why_us", $page_id) : null;
 $why_us_title = $why_us['title'];
@@ -71,6 +67,17 @@ $faq_template_query_args = [
 ];
 $faq_page_link = get_permalink(get_posts($faq_template_query_args)[0]);
 
+
+$blog_template_query_args = [
+    'post_type' => 'page',
+    'fields' => 'ids',
+    'nopaging' => true,
+    'meta_key' => '_wp_page_template',
+    'meta_value' => 'templates/blog.php'
+];
+$blog_page_link = get_permalink(get_posts($blog_template_query_args)[0]);
+
+
 $all_categories = $cyn_general->category_info('', "/blog/", 'category');
 
 $latest_blog = new WP_Query([
@@ -86,11 +93,14 @@ $latest_blog = new WP_Query([
 <?php get_header(); ?>
 <main class="home-page">
     <section class="hero-section-home">
-        <h1>Its moving time</h1>
-        <p class="description-hero">let’s make your next move easy</p>
-        <a href="#home-form-section">
-            <div class="submit-button-comment">get a qoute</div>
-        </a>
+        <div>
+            <h1>Its moving time</h1>
+            <p class="description-hero">let’s make your next move easy</p>
+            <a href="#home-form-section">
+                <div class="submit-button-comment">get a qoute</div>
+            </a>
+        </div>
+
     </section>
 
     <?php if ($service_in_home) : ?>
@@ -105,12 +115,15 @@ $latest_blog = new WP_Query([
                 ?>
                     <div class="title-expert-wrapper">
                         <a href="<?= get_the_permalink() ?>">
-                            <h3><?= get_the_title() ?></h3>
+                            <h3 class="capitalize"><?= get_the_title() ?></h3>
                         </a>
                         <div class="service-expert"><?= get_the_excerpt() ?></div>
                     </div>
                 <?php endwhile;
+
                 ?>
+                <?php wp_reset_postdata(); ?>
+
             </div>
             <div class="submit-button-comment btn-desktop-not-show">view all</div>
 
@@ -122,7 +135,6 @@ $latest_blog = new WP_Query([
                 <img src=" <?= get_stylesheet_directory_uri() . '/assets/img/service-mobile.png' ?>">
             </div>
         </section>
-        <?php wp_reset_postdata(); ?>
     <?php endif; ?>
 
     <?php if (!is_null($section3)) : ?>
@@ -178,7 +190,10 @@ $latest_blog = new WP_Query([
             <div class="title-btn container">
 
                 <h2 class="title-section">Blogs</h2>
-                <div class="submit-button-comment btn-mobile-not-show">view all</div>
+                <a href="<?= $blog_page_link ?>">
+
+                    <div class="submit-button-comment btn-mobile-not-show">view all</div>
+                </a>
 
             </div>
             <div class="mobile-cat container">
@@ -243,16 +258,23 @@ $latest_blog = new WP_Query([
     <?php endif ?>
 
     <?php if (($testimonial)) : ?>
-        <section class="container testimonial-section-in-home">
+        <section class="container testimonial-section-in-home" id="testimonial">
             <div class="title-btn">
                 <h2 class="title-section">See What Our Clients Are Saying</h2>
-                <div></div>
+                <div class="yelp-and-google">
+                    <div><img src="<?= get_template_directory_uri() . '/assets/img/google.png' ?>"></div>
+                    <div><img src="<?= get_template_directory_uri() . '/assets/img/yelp.png' ?>"></div>
+                </div>
             </div>
+
             <section class="testimonial">
                 <div class="testimonial-container" id="testimonial-group">
                     <?php
+                    $counter = 1;
                     foreach ($testimonial as $index => $testimonial_id) {
                         get_template_part('templates/components/cards/card', 'testimonial', ['post_id' => $testimonial_id]);
+                        if ($counter === 6) break;
+                        $counter++;
                     }
                     wp_reset_postdata();
                     ?>
@@ -274,7 +296,7 @@ $latest_blog = new WP_Query([
                     <?php foreach ($cats_id_group  as $index => $cat_id) : ?>
                         <div class="container-question" data-tabname="<?= $cats_name_group[$index] ?>" <?php if ($index == 0) echo 'active' ?>>
                             <div class="category-icon">
-                                <p class="cat-name"><?= $cats_name_group[$index]  ?></p>
+                                <p class="cat-name capitalize"><?= $cats_name_group[$index]  ?></p>
                                 <i class="icon-arrow btn-category"></i>
                             </div>
                             <div class="grid-auto-height-transitions">
@@ -333,7 +355,7 @@ $latest_blog = new WP_Query([
                     <img src="<?= get_stylesheet_directory_uri() . '/assets/img/image-form-resume.png' ?>">
                 </div>
                 <div class="title-form-inputs">
-                    <p class="title-form">How do I join?</p>
+                    <p class="title-form capitalize">How do I join?</p>
                     <p>
                         Ready to apply to Yooz Move? Send in your application with a resume and a cover letter showcasing your relevant experience and how it aligns with our company values.
                     </p>

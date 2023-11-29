@@ -338,6 +338,12 @@
     }
   });
 
+  // assets/js/modules/general.js
+  function overflowHidden() {
+    const htmlTag = document.querySelector("html");
+    htmlTag.classList.toggle("overflow-hidden");
+  }
+
   // assets/js/modules/header.js
   var menuMobileHandler = document.querySelector(".btn-menu-mobile");
   var mobileMenu = document.querySelector(".mobile-menu-bg");
@@ -346,9 +352,11 @@
   if (header) {
     menuMobileHandler.addEventListener("click", () => {
       mobileMenu.classList.toggle("show");
+      overflowHidden();
     });
     btnClose.addEventListener("click", () => {
       mobileMenu.classList.toggle("show");
+      overflowHidden();
     });
   }
 
@@ -489,16 +497,35 @@
     });
   });
 
+  // assets/js/modules/drop-down.js
+  var selectHandler = document.querySelector(".category-mobile select");
+  var optionSelect = document.querySelectorAll(
+    ".category-mobile select option"
+  );
+  if (selectHandler && optionSelect) {
+    selectHandler.addEventListener("change", (e) => {
+      optionSelect.forEach((el) => {
+        if (el.value === e.target.value) {
+          window.location = el.dataset.uri;
+        }
+      });
+    });
+  }
+
   // assets/js/modules/macy.js
   var import_macy = __toESM(require_macy());
-  var testimonialGroup = (0, import_macy.default)({
-    container: "#testimonial-group",
-    columns: 3,
-    trueOrder: true,
-    breakAt: {
-      800: {
-        columns: 1
+  var homePage = document.querySelector(".home-page");
+  var singleServicePage = document.querySelector(".single-service-page");
+  if (homePage || singleServicePage) {
+    const testimonialGroup = (0, import_macy.default)({
+      container: "#testimonial-group",
+      columns: 3,
+      trueOrder: true,
+      breakAt: {
+        800: {
+          columns: 1
+        }
       }
-    }
-  });
+    });
+  }
 })();

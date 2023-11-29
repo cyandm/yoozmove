@@ -1,7 +1,7 @@
 <?php
 $cyn_general = new cyn_general();
 
-$post_id = $args['post_id'];
+$post_id = isset($args['post_id']) ? $args['post_id']  : get_the_ID();
 
 $all_categories = $cyn_general->category_info($post_id, "/blog/", 'category');
 

@@ -4,6 +4,7 @@ main.single-post-page {
   @include d_flex(column, center, stretch, nowrap, false, PxToRem(28));
 
   .bread-crumb {
+    text-transform: capitalize;
     span {
       color: $white-40;
     }
@@ -44,6 +45,7 @@ main.single-post-page {
         @include d_flex(column, center, stretch, nowrap, false, PxToRem(16));
 
         .title-date {
+          text-transform: capitalize;
           @include d_flex(
             row,
             space-between,
@@ -118,7 +120,14 @@ main.single-post-page {
             @include font_style(body);
             font-weight: 700;
           }
-
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6 {
+            text-transform: capitalize;
+          }
           blockquote {
             padding: PxToRem(56) PxToRem(44);
             background-color: $gray1;

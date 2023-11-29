@@ -16,6 +16,7 @@ main.blog-page {
 
       h1 {
         @include font_style('t1');
+        text-transform: capitalize;
         span {
           font-weight: 700;
           position: relative;

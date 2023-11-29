@@ -16,6 +16,7 @@
   border-radius: PxToRem(12);
   background: $blue;
   color: $white;
+  text-transform: capitalize;
   &.btn-desktop-not-show {
     width: 100%;
   }

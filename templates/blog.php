@@ -11,7 +11,6 @@ $all_blogs = new WP_Query([
     'paged' => $paged,
 ]);
 
-
 ?>
 
 

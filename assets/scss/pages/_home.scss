@@ -19,15 +19,54 @@ main.home-page {
     }
   }
   .hero-section-home {
-    @include d_flex(column, flex-start, center, nowrap, false, PxToRem(12));
     text-transform: capitalize;
-    h1 {
-      @include font_style(t1);
-      color: $yellow;
+    background-image: url('../img/car-in-home.svg'),
+      url('../img/road-desktop.svg');
+    background-repeat: no-repeat, repeat-x;
+    background-size: 600px, contain;
+    background-position: 200px bottom, center;
+    width: 100%;
+    height: clamp(300px, 50vw, 60vh);
+
+    div {
+      margin-top: PxToRem(80);
+      @include d_flex(column, center, center, nowrap, false, PxToRem(12));
+
+      h1 {
+        @include font_style(t1);
+        color: $yellow;
+      }
+      .description-hero {
+        @include font_style(header2);
+        color: $yellow;
+      }
     }
-    .description-hero {
-      @include font_style(header2);
-      color: $yellow;
+    @media (max-width: 900px) {
+      background-position: 50px bottom, center;
+      div {
+        margin-top: PxToRem(20);
+        h1 {
+          @include font_style('header');
+          color: $yellow;
+        }
+        .description-hero {
+          @include font_style(header4);
+          color: $yellow;
+        }
+      }
+    }
+    @media (max-width: 650px) {
+      background-image: url('../img/car-mobile.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      height: clamp(580px, 50vw, 60vh);
+    }
+    @media (max-width: 500px) {
+      height: clamp(400px, 50vw, 60vh);
+    }
+    @media (max-width: 400px) {
+      height: clamp(300px, 50vw, 60vh);
     }
   }
   .introduce-services-home {
@@ -276,6 +315,11 @@ main.home-page {
 
   .testimonial-section-in-home {
     @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(24));
+    .title-btn {
+      .yelp-and-google {
+        @include d_flex(row, flex-start, center, nowrap, false, PxToRem(8));
+      }
+    }
   }
 
   .faq-section-in-home {
@@ -370,7 +414,7 @@ main.home-page {
         &:nth-child(2),
         &:nth-child(5) {
           border-inline: 1px dashed $blue2;
-          @media (max-width: 750px) {
+          @media (max-width: 1000px) {
             border-inline: none;
           }
         }
@@ -378,7 +422,7 @@ main.home-page {
         &:nth-child(2),
         &:nth-child(3) {
           border-bottom: 1px dashed $blue2;
-          @media (max-width: 750px) {
+          @media (max-width: 1000px) {
             border-bottom: none;
           }
         }
@@ -387,11 +431,11 @@ main.home-page {
           color: $yellow;
           margin-bottom: PxToRem(16);
         }
-        @media (max-width: 750px) {
+        @media (max-width: 1000px) {
           width: 100%;
         }
       }
-      @media (max-width: 750px) {
+      @media (max-width: 1000px) {
         @include d_flex(column, center, flex-start, nowrap, true, PxToRem(16));
       }
     }

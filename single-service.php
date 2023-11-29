@@ -1,10 +1,11 @@
+<?php get_header() ?>
+
 <?php
+
 $post_id = get_the_ID();
 
 $testimonial =  isset(get_field('testimonial')['testimonial_choosed']) ? get_field('testimonial')['testimonial_choosed'] : null;
-
 ?>
-<?php get_header() ?>
 <main class="single-service-page container">
     <section class="service-info-form">
         <div class="title-description-service">
@@ -21,18 +22,23 @@ $testimonial =  isset(get_field('testimonial')['testimonial_choosed']) ? get_fie
             <h2> Hear From Our Happy Clients</h2>
             <div class="testimonial-container" id="testimonial-group">
                 <?php
+                $counter = 1;
+
                 foreach ($testimonial as $index => $testimonial_id) {
                     get_template_part('templates/components/cards/card', 'testimonial', ['post_id' => $testimonial_id]);
+                    if ($counter === 6) break;
+                    $counter++;
                 }
-                wp_reset_postdata();
                 ?>
             </div>
         </section>
     <?php endif ?>
+    <?php wp_reset_postdata(); ?>
 
     <section class="service-comments">
         <h2>Share your feedback with us</h2>
-        <?php comments_template('', true); ?>
+        <?php comments_template(); ?>
     </section>
 </main>
+
 <?php get_footer() ?>

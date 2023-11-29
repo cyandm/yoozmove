@@ -4,7 +4,7 @@
     </div>
     <div class="post-info-home">
         <a href="<?= get_the_permalink() ?>">
-            <p class="post-title"><?= get_the_title() ?></p>
+            <p class="post-title capitalize"><?= get_the_title() ?></p>
         </a>
         <div class="post-expert"><?= get_the_excerpt() ?></div>
         <div class="post-date">

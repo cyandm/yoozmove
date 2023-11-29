@@ -14,7 +14,7 @@ $reading_time = $cyn_general->cyn_reading_time($post_id);
             <?= get_the_post_thumbnail($post_id) ?>
         </div>
         <div class="post-info">
-            <p class="post-title"><?= get_the_title() ?></p>
+            <p class="post-title capitalize"><?= get_the_title() ?></p>
             <p class="post-expert"><?= get_the_excerpt() ?></p>
 
             <div class="time-and-read-more">

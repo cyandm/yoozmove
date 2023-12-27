@@ -65,7 +65,7 @@ $last_blogs = new WP_Query([
 
                 </div>
                 <div class="post-content">
-                    <?= get_the_content() ?>
+                    <?php the_content() ?>
                 </div>
             </div>
             <div class="comments-wrapper">

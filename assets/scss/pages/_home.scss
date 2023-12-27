@@ -126,13 +126,6 @@ main.home-page {
       z-index: -2;
       width: 100vw;
     }
-    .image-moving-car {
-      position: absolute;
-      // animation: linear infinite;
-      // animation-name: moving;
-      // animation-duration: 10s;
-      z-index: 0;
-    }
 
     @media (max-width: 900px) {
       background-position: 50px bottom, center;
@@ -148,22 +141,6 @@ main.home-page {
         }
       }
     }
-    // @media (max-width: 650px) {
-    //   .image-moving-car {
-    //     display: none;
-    //   }
-    //   background-image: url('../img/car-mobile.svg');
-    //   background-repeat: no-repeat;
-    //   background-size: contain;
-    //   background-position: center;
-    //   height: clamp(580px, 50vw, 60vh);
-    // }
-    // @media (max-width: 500px) {
-    //   height: clamp(400px, 50vw, 60vh);
-    // }
-    // @media (max-width: 400px) {
-    //   height: clamp(300px, 50vw, 60vh);
-    // }
   }
   .introduce-services-home {
     @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(24));
@@ -186,7 +163,6 @@ main.home-page {
         .service-expert {
           color: $gray3;
           @include text_over_flow($-webkit-line-clamp: 2);
-          text-align: justify;
         }
       }
       @media (max-width: 700px) {
@@ -745,59 +721,4 @@ main.home-page {
   --_animation-duration: 60s;
 }
 
-@keyframes leftToRightDance {
-  from {
-    transform: translateX(-25px);
-  }
-  to {
-    transform: translateX(25px);
-  }
-}
 
-@keyframes rotate360 {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(-360deg);
-  }
-}
-
-@keyframes translateInfinite {
-  from {
-    transform: translateX(-5%);
-  }
-
-  to {
-    transform: translateX(5%);
-  }
-}
-
-@keyframes upAndDown {
-  from {
-    transform: translateY(-2px);
-    @media (max-width: 500px) {
-      transform: translateY(-100px);
-    }
-  }
-
-  to {
-    transform: translateY(4px);
-  }
-}
-
-@keyframes upAndDownMobile {
-  from {
-    transform: translateY(-10px);
-  }
-
-  to {
-    transform: translateY(4px);
-  }
-}
-@keyframes scroll {
-  to {
-    transform: translate(calc(-50% - 73.301px));
-  }
-}

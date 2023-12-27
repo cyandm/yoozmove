@@ -20,6 +20,7 @@
       flex-basis: 68%;
       .post-title {
         @include font_style(header3);
+        @include text_over_flow($-webkit-line-clamp: 1);
       }
       .post-expert {
         color: $gray3;

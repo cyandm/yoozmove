@@ -91,7 +91,6 @@ if (!class_exists('cyn_form')) {
                 Last Name: " .  $dbData['user_last_name'] . "\n
                 Email: " . $dbData['user_email'] . "\n
                 Phone: " . $dbData['user_phone'] . "\n
-
                 Date: " . $dbData['date'] . "\n
                 Move Type: " . $dbData['move_type'] . "\n
                 Origin Zip Code: " . $dbData['origin_zip_code'] . "\n

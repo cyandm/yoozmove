@@ -19,6 +19,9 @@ main.single-post-page {
     article {
       width: 70%;
       border-right: $border-gray;
+      &.article-form-information {
+        border-right: none;
+      }
       padding-right: PxToRem(20);
       @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(28));
       .mobile-cat {
@@ -52,7 +55,7 @@ main.single-post-page {
           @include d_flex(
             row,
             space-between,
-            center,
+            flex-start,
             nowrap,
             false,
             PxToRem(16)
@@ -61,6 +64,7 @@ main.single-post-page {
           h1 {
             @include font_style('t1');
             flex: 1;
+            font-size: 2.75rem;
           }
           .date-and-time {
             color: $gray3;
@@ -100,6 +104,7 @@ main.single-post-page {
         }
         .post-content {
           @include d_flex(column, center, stretch, nowrap, false, PxToRem(16));
+          text-align: justify;
           p {
             color: $gray3;
             text-align: justify;
@@ -180,6 +185,7 @@ main.single-post-page {
       }
     }
     .similar-post {
+      border-left: $border-gray;
       .posts-wrapper {
         @include d_flex(column, start, stretch, nowrap, false, PxToRem(8));
       }

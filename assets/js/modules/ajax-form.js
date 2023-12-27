@@ -52,6 +52,8 @@ jQuery(document).ready(($) => {
   const serviceForm = $('#service-form');
   const serviceInput = document.querySelectorAll('#service-form .data');
 
+  const serviceInputDate = document.querySelector('#service-form #date');
+
   const serviceFormSubmit = $('#service-form #service-form-submit');
 
   $(serviceForm).on('submit', (e) => {
@@ -72,6 +74,7 @@ jQuery(document).ready(($) => {
         serviceInput.forEach((el) => {
           el.value = '';
         });
+        serviceInputDate.setAttribute('data-date-value', 'MM-DD-YYYY');
         $(serviceFormSubmit).text('Sent!');
         setTimeout(() => {
           $(serviceFormSubmit).text('Send Message');
@@ -91,6 +94,7 @@ jQuery(document).ready(($) => {
     e.preventDefault();
     const form = e.currentTarget;
     const submitter = e.submitter;
+    const resumeFormSubmit = $('#resume-form #resume-form-submit');
 
     const formData = new FormData(form, submitter);
     formData.append('action', 'send_resume_form');
@@ -107,9 +111,9 @@ jQuery(document).ready(($) => {
       success: (res) => {
         console.warn(res);
         form.reset();
-        $(submitter).text('Sent!');
+        resumeFormSubmit.text('Sent!');
         setTimeout(() => {
-          $(submitter).text('Send Message');
+          resumeFormSubmit.text('Send Message');
         }, 1000);
       },
       error: (err) => {

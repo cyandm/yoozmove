@@ -1,18 +1,56 @@
-@keyframes moving {
-  0% {
-    transform: rotateY(180deg);
-    left: 0px;
+@keyframes leftToRightDance {
+  from {
+    transform: translateX(-25px);
   }
-  50% {
-    transform: rotateY(180deg);
-    left: 60%;
+  to {
+    transform: translateX(25px);
   }
-  51% {
-    transform: rotateY(0deg);
-    left: 60%;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0);
   }
-  100% {
-    transform: rotateY(0deg);
-    left: 0px;
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes translateInfinite {
+  from {
+    transform: translateX(-5%);
+  }
+
+  to {
+    transform: translateX(5%);
+  }
+}
+
+@keyframes upAndDown {
+  from {
+    transform: translateY(-2px);
+    @media (max-width: 500px) {
+      transform: translateY(-100px);
+    }
+  }
+
+  to {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes upAndDownMobile {
+  from {
+    transform: translateY(-10px);
+  }
+
+  to {
+    transform: translateY(4px);
+  }
+}
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 73.301px));
   }
 }

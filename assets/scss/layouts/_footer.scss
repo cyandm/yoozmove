@@ -2,9 +2,9 @@
 
 footer {
   margin-top: PxToRem(80);
-  .container {
-    @include d_flex(row, center, stretch, wrap, true, PxToRem(28));
-
+  .footer-column-wrapper {
+    @include d_flex(row, flex-start, stretch, wrap, true, PxToRem(28));
+    width: 90%;
     padding-bottom: PxToRem(52);
   }
   position: relative;
@@ -82,6 +82,31 @@ footer {
     .social-media-group {
       width: 80%;
       @include d_flex(row, flex-start, stretch, wrap, false, PxToRem(8));
+    }
+  }
+
+  .copy-right {
+    width: 100%;
+    @include d_flex(row, space-between, center, wrap, false, PxToRem(40));
+    margin-bottom: PxToRem(20);
+  }
+
+  @media (max-width: 1440px) {
+    .footer-column-wrapper {
+      //@include d_flex(row, center, stretch, wrap, true, PxToRem(28));
+      width: 80%;
+      margin-inline: unset;
+    }
+  }
+
+  @media (max-width: 950px) {
+    .img-car {
+      display: none;
+    }
+    .footer-column-wrapper {
+      @include d_flex(row, center, stretch, wrap, true, PxToRem(28));
+      width: 100%;
+      margin-inline: auto;
     }
   }
 }

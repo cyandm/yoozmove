@@ -57,6 +57,8 @@ main.faq-page {
       .category-icon {
         @include d_flex(row, space-between, center, nowrap, false, PxToRem(48));
         padding-block: PxToRem(24);
+        cursor: pointer;
+
         .cat-name {
           @include font_style(header5);
         }

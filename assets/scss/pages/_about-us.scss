@@ -10,6 +10,7 @@ main.about-us-page {
     }
     .description {
       @include font_style('body');
+      text-align: justify;
     }
   }
   .sec-1 {
@@ -72,6 +73,9 @@ main.about-us-page {
             @include font_style(t1);
             color: $white-10;
           }
+          .description {
+            text-align: justify;
+          }
         }
       }
     }
@@ -100,6 +104,7 @@ main.about-us-page {
       }
       .information-organ {
         flex: 1;
+        text-align: justify;
         @include d_flex(
           column,
           flex-start,
@@ -164,6 +169,7 @@ main.about-us-page {
 
       .inner-title-description {
         flex: 1;
+        text-align: justify;
         @include d_flex(
           column,
           space-between,
@@ -202,6 +208,8 @@ main.about-us-page {
   }
   .sec-4 {
     .container-information {
+      text-align: justify;
+
       padding-block: PxToRem(24);
       @include d_flex(row, space-between, stretch, wrap, true, PxToRem(0));
       @media (max-width: 1000px) {

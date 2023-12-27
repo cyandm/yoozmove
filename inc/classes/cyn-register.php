@@ -13,6 +13,7 @@ if (!class_exists('cyn_register')) {
 
             add_action('init', [$this, 'register_service_post_type']);
             add_action('init', [$this, 'cyn_add_service_cat_taxonomy']);
+            add_action('init', [$this, 'cyn_form_cat_taxonomy']);
 
             add_action('init', [$this, 'register_testimonial_post_type']);
         }
@@ -160,6 +161,24 @@ if (!class_exists('cyn_register')) {
             ];
 
             register_taxonomy('service-cat', ['service'], $args);
+        }
+
+        function cyn_form_cat_taxonomy()
+        {
+            $labels = [
+                'name' => 'form category'
+            ];
+
+            $args = [
+                'hierarchical' => true,
+                'labels' => $labels,
+                'show_ui' => true,
+                'show_admin_column' => true,
+                'query_var' => true,
+                'rewrite' => ['slug' => 'form-cat'],
+            ];
+
+            register_taxonomy('form-cat', ['contact-us-form'], $args);
         }
 
         public function register_testimonial_post_type()

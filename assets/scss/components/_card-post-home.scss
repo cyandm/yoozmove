@@ -24,6 +24,7 @@
     .post-expert {
       color: $gray3;
       @include text_over_flow();
+      text-align: justify;
       transition: all 0.3s ease-in;
     }
     .post-date {

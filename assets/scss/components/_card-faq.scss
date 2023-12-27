@@ -12,6 +12,7 @@
     border-radius: PxToRem(4);
     @include d_flex(row, center, center, nowrap, false, 0);
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
   }
   .question-title-description {
     @include d_flex(column, center, stretch, nowrap, false, PxToRem(12));

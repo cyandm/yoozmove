@@ -17,7 +17,7 @@ $posts = $service->posts;
     <input class="data" type="text" placeholder="last name" name="last-name">
     <input class="data" type="email" placeholder="email" name="email" required>
     <input class="data" type="tel" placeholder="Phone Number " name="phone-number" required>
-    <input class="data" type="date" placeholder="moving date" name="date" required>
+    <input class="data" type="date" data-date-value='' data-date-format="MM-DD-YYYY" id="date" name="date" required title="Enter a date in this format MM-DD-YYYY" />
     <?php
     if ($posts) : ?>
         <div class="drop-down-service">

@@ -11,14 +11,14 @@ $footer_social_media = get_field('footer_social_media', $pageID);
 	<div class="img-car">
 		<img src="<?= get_stylesheet_directory_uri() . '/assets/img/CAR.png' ?>" alt="car">
 	</div>
-	<div class="container">
+	<div class="container footer-column-wrapper">
 		<div class="column">
 			<div class="footer-title">home</div>
 			<?php wp_nav_menu(['theme_location' => 'footer-menu-one']) ?>
 
 		</div>
 		<div class="column">
-			<div class="footer-title">yoozmove</div>
+			<div class="footer-title">YoozMove</div>
 			<?php wp_nav_menu(['theme_location' => 'footer-menu-two']) ?>
 
 		</div>
@@ -64,6 +64,14 @@ $footer_social_media = get_field('footer_social_media', $pageID);
 			</div>
 		<?php endif; ?>
 
+	</div>
+	<div class="copy-right container">
+		<p class="yoozmove-copyright">
+			Copyright © 2023 YoozMove. All Rights Reserved.
+		</p>
+		<div class="license-yoozmove">
+			TxDMV # XXXXXXXXXX | USDOT # XXXXXXX
+		</div>
 	</div>
 </footer>
 

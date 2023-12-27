@@ -59,7 +59,6 @@ jQuery(document).ready(($) => {
 
     const formDataArrayService = $(serviceForm).serializeArray();
     const formDataService = objectifyFormArray(formDataArrayService);
-    if (!formDataService.agreement) formDataService.agreement = 'false';
 
     $.ajax({
       url: cyn_head_script.url,
@@ -70,7 +69,6 @@ jQuery(document).ready(($) => {
         data: formDataService,
       },
       success: (res) => {
-        console.warn(res);
         serviceInput.forEach((el) => {
           el.value = '';
         });
@@ -89,41 +87,35 @@ jQuery(document).ready(($) => {
 });
 
 jQuery(document).ready(($) => {
-  const resumeForm = $('#resume-form');
-  const resumeInput = document.querySelectorAll('#resume-form .data');
-
-  const resumeFormSubmit = $('#resume-form #resume-form-submit');
-
-  $(resumeForm).on('submit', (e) => {
+  $('#resume-form').on('submit', (e) => {
     e.preventDefault();
+    const form = e.currentTarget;
+    const submitter = e.submitter;
 
-    const formDataArrayResume = $(resumeForm).serializeArray();
-    const formDataResume = objectifyFormArray(formDataArrayResume);
-
-    if (!formDataResume.agreement) formDataResume.agreement = 'false';
+    const formData = new FormData(form, submitter);
+    formData.append('action', 'send_resume_form');
+    formData.append('_nonce', cyn_head_script.nonce);
 
     $.ajax({
+      type: 'POST',
       url: cyn_head_script.url,
-      type: 'post',
-      data: {
-        action: 'send_resume_form',
-        _nonce: cyn_head_script.nonce,
-        data: formDataResume,
-      },
+      cache: false,
+      processData: false,
+      contentType: false,
+      data: formData,
+
       success: (res) => {
         console.warn(res);
-        resumeInput.forEach((el) => {
-          el.value = '';
-        });
-        $(resumeFormSubmit).text('Sent!');
+        form.reset();
+        $(submitter).text('Sent!');
         setTimeout(() => {
-          $(resumeFormSubmit).text('Send Message');
+          $(submitter).text('Send Message');
         }, 1000);
       },
       error: (err) => {
         console.error(err);
-        $(resumeFormSubmit).removeClass('pending');
-        $(resumeFormSubmit).addClass('error');
+        $(submitter).removeClass('pending');
+        $(submitter).addClass('error');
       },
     });
   });

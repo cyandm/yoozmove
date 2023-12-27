@@ -54,4 +54,22 @@ form#service-form {
       max-width: unset;
     }
   }
+
+  #date {
+    position: relative;
+    height: 45px;
+    color: transparent;
+  }
+
+  #date:before {
+    position: absolute;
+    top: 50%;
+    left: PxToRem(16);
+    content: attr(data-date-value);
+    display: inline-block;
+    color: white;
+    transform: translateY(-45%);
+    background-color: $gray1;
+    padding-block: PxToRem(8);
+  }
 }

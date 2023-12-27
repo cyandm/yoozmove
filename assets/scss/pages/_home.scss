@@ -19,19 +19,19 @@ main.home-page {
     }
   }
   .hero-section-home {
+    position: relative;
     text-transform: capitalize;
-    background-image: url('../img/car-in-home.svg'),
-      url('../img/road-desktop.svg');
-    background-repeat: no-repeat, repeat-x;
-    background-size: 600px, contain;
-    background-position: 200px bottom, center;
+
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: center;
     width: 100%;
     height: clamp(300px, 50vw, 60vh);
 
-    div {
+    .title-button-hero {
       margin-top: PxToRem(80);
       @include d_flex(column, center, center, nowrap, false, PxToRem(12));
-
+      z-index: 1;
       h1 {
         @include font_style(t1);
         color: $yellow;
@@ -41,9 +41,102 @@ main.home-page {
         color: $yellow;
       }
     }
+    .clouds-wrapper {
+      position: absolute;
+      top: 0;
+      isolation: isolate;
+      z-index: -3;
+      width: 100%;
+      #clouds {
+        width: 100%;
+      }
+    }
+    .car-wrapper {
+      position: absolute;
+      bottom: 0.4rem;
+      isolation: isolate;
+      z-index: -1;
+      #car {
+        max-height: 300px;
+        width: 60vw;
+        @media (max-width: 400px) {
+          transform: translateX(100px);
+        }
+      }
+    }
+    .grass-wrapper {
+      position: absolute;
+      bottom: 2rem;
+      z-index: -3;
+      @media (max-width: 800px) {
+        #grass-svg {
+          height: 50px;
+        }
+      }
+      @media (max-width: 600px) {
+        #grass-svg {
+          height: 40px;
+        }
+      }
+      @media (max-width: 450px) {
+        #grass-svg {
+          height: 25px;
+        }
+      }
+    }
+    .city-wrapper {
+      position: absolute;
+      bottom: 0.5rem;
+      z-index: -4;
+      right: 0;
+      #city-hero-svg {
+      }
+      @media (max-width: 700px) {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 100%;
+        bottom: -0.2rem;
+
+        padding-inline: PxToRem(16);
+        #city-hero-svg {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          #city-hero {
+            width: 100%;
+          }
+        }
+      }
+      @media (max-width: 480px) {
+        bottom: -1.5rem;
+      }
+    }
+    .road-wrapper {
+      position: absolute;
+      bottom: 0;
+      isolation: isolate;
+      z-index: -2;
+      width: 100vw;
+    }
+    .road-line-wrapper {
+      position: absolute;
+      bottom: 0.8rem;
+      isolation: isolate;
+      z-index: -2;
+      width: 100vw;
+    }
+    .image-moving-car {
+      position: absolute;
+      // animation: linear infinite;
+      // animation-name: moving;
+      // animation-duration: 10s;
+      z-index: 0;
+    }
+
     @media (max-width: 900px) {
       background-position: 50px bottom, center;
-      div {
+      .title-button-hero {
         margin-top: PxToRem(20);
         h1 {
           @include font_style('header');
@@ -55,19 +148,22 @@ main.home-page {
         }
       }
     }
-    @media (max-width: 650px) {
-      background-image: url('../img/car-mobile.svg');
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      height: clamp(580px, 50vw, 60vh);
-    }
-    @media (max-width: 500px) {
-      height: clamp(400px, 50vw, 60vh);
-    }
-    @media (max-width: 400px) {
-      height: clamp(300px, 50vw, 60vh);
-    }
+    // @media (max-width: 650px) {
+    //   .image-moving-car {
+    //     display: none;
+    //   }
+    //   background-image: url('../img/car-mobile.svg');
+    //   background-repeat: no-repeat;
+    //   background-size: contain;
+    //   background-position: center;
+    //   height: clamp(580px, 50vw, 60vh);
+    // }
+    // @media (max-width: 500px) {
+    //   height: clamp(400px, 50vw, 60vh);
+    // }
+    // @media (max-width: 400px) {
+    //   height: clamp(300px, 50vw, 60vh);
+    // }
   }
   .introduce-services-home {
     @include d_flex(column, flex-start, stretch, nowrap, false, PxToRem(24));
@@ -90,6 +186,7 @@ main.home-page {
         .service-expert {
           color: $gray3;
           @include text_over_flow($-webkit-line-clamp: 2);
+          text-align: justify;
         }
       }
       @media (max-width: 700px) {
@@ -152,8 +249,9 @@ main.home-page {
             stretch,
             nowrap,
             true,
-            PxToRem(80)
+            PxToRem(28)
           );
+
           @media (max-width: 800px) {
             @include d_flex(
               column,
@@ -161,7 +259,7 @@ main.home-page {
               center,
               nowrap,
               true,
-              PxToRem(36)
+              PxToRem(20)
             );
           }
         }
@@ -172,8 +270,9 @@ main.home-page {
             stretch,
             nowrap,
             true,
-            PxToRem(80)
+            PxToRem(28)
           );
+
           @media (max-width: 800px) {
             @include d_flex(
               column,
@@ -181,14 +280,11 @@ main.home-page {
               center,
               nowrap,
               true,
-              PxToRem(36)
+              PxToRem(20)
             );
           }
         }
         .image {
-          max-height: PxToRem(492);
-          max-width: PxToRem(540);
-          overflow: hidden;
           @include d_flex(column, center, flex-end, nowrap, false, 0);
 
           img {
@@ -197,7 +293,7 @@ main.home-page {
         }
 
         .text-content {
-          padding: PxToRem(8);
+          padding: PxToRem(16);
           padding-block: PxToRem(36);
           @include d_flex(
             column,
@@ -207,13 +303,15 @@ main.home-page {
             false,
             PxToRem(4)
           );
-          .number-position {
-            position: relative;
-            .number {
-              position: absolute;
-              top: PxToRem(-36);
-              @include font_style(t1);
-              color: $white-10;
+          .heading-description {
+            .heading {
+              @include font_style(header3);
+              text-transform: capitalize;
+              margin-bottom: PxToRem(8);
+            }
+            .description-content {
+              text-align: justify;
+              color: $gray3;
             }
           }
         }
@@ -355,6 +453,7 @@ main.home-page {
             }
             i {
               transition: all 0.3s ease-in-out;
+              cursor: pointer;
             }
           }
 
@@ -403,6 +502,9 @@ main.home-page {
   }
 
   .why-us {
+    .description {
+      text-align: justify;
+    }
     .container-information {
       padding-block: PxToRem(24);
       @include d_flex(row, space-between, stretch, wrap, true, PxToRem(0));
@@ -431,6 +533,7 @@ main.home-page {
           color: $yellow;
           margin-bottom: PxToRem(16);
         }
+
         @media (max-width: 1000px) {
           width: 100%;
         }
@@ -460,6 +563,9 @@ main.home-page {
         .title-form {
           @include font_style(header3);
           color: $yellow;
+        }
+        .description-join {
+          text-align: justify;
         }
         .data-form {
           width: 100%;
@@ -513,6 +619,18 @@ main.home-page {
                   &:-webkit-autofill:active {
                     -webkit-text-fill-color: #ffffff;
                     box-shadow: inset 0 0 PxToRem(20) PxToRem(20) $gray1;
+                  }
+                }
+                input[type='file'] {
+                  padding: 9.5px PxToRem(16);
+                  &::-webkit-file-upload-button {
+                    visibility: hidden;
+                  }
+                  &::before {
+                    content: 'Attach File';
+                    opacity: 0.5;
+                    font-weight: 200;
+                    font-size: 15px;
                   }
                 }
                 @media (max-width: 700px) {
@@ -572,5 +690,114 @@ main.home-page {
     @media (min-width: 601px) {
       display: none;
     }
+  }
+}
+
+#clouds > path {
+  animation: leftToRightDance 4s ease-in infinite alternate;
+
+  @for $i from 0 to 10 {
+    &:nth-child(#{$i}) {
+      animation-delay: calc(0.3s * $i);
+    }
+  }
+}
+
+#car {
+  transform: translateX(160px);
+
+  .wheel_1 {
+    animation: rotate360 1s linear infinite;
+    transform-origin: 16.6% 82.5%;
+  }
+
+  .wheel_2 {
+    animation: rotate360 1s linear infinite;
+    transform-origin: 62.5% 82.5%;
+  }
+
+  #Group {
+    animation: upAndDown 1s ease-in-out infinite alternate;
+    @media (max-width: 600px) {
+      animation-name: upAndDownMobile;
+    }
+  }
+}
+
+#Road {
+  #road_lines {
+    animation: scroll 5s infinite linear;
+  }
+}
+
+.scroller[data-animated='true'] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 18s)
+    var(--_animation-direction, forwards) linear infinite reverse;
+}
+
+.scroller[data-direction='right'] {
+  --_animation-direction: reverse;
+}
+
+.scroller[data-speed='slow'] {
+  --_animation-duration: 60s;
+}
+
+@keyframes leftToRightDance {
+  from {
+    transform: translateX(-25px);
+  }
+  to {
+    transform: translateX(25px);
+  }
+}
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes translateInfinite {
+  from {
+    transform: translateX(-5%);
+  }
+
+  to {
+    transform: translateX(5%);
+  }
+}
+
+@keyframes upAndDown {
+  from {
+    transform: translateY(-2px);
+    @media (max-width: 500px) {
+      transform: translateY(-100px);
+    }
+  }
+
+  to {
+    transform: translateY(4px);
+  }
+}
+
+@keyframes upAndDownMobile {
+  from {
+    transform: translateY(-10px);
+  }
+
+  to {
+    transform: translateY(4px);
+  }
+}
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 73.301px));
   }
 }

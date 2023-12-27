@@ -3,6 +3,9 @@
 main.single-post-page {
   @include d_flex(column, center, stretch, nowrap, false, PxToRem(28));
 
+  &.single-form {
+    min-height: 50vh;
+  }
   .bread-crumb {
     text-transform: capitalize;
     span {
@@ -57,6 +60,7 @@ main.single-post-page {
 
           h1 {
             @include font_style('t1');
+            flex: 1;
           }
           .date-and-time {
             color: $gray3;
@@ -173,6 +177,11 @@ main.single-post-page {
           @include font_style(header6);
           color: $yellow;
         }
+      }
+    }
+    .similar-post {
+      .posts-wrapper {
+        @include d_flex(column, start, stretch, nowrap, false, PxToRem(8));
       }
     }
     @media (max-width: 800px) {

@@ -18,8 +18,10 @@ if (!is_null(get_posts($about_us_template_query_args))) {
     $about_us_page_id = get_posts($about_us_template_query_args)[0];
 }
 
-$section3 = get_field("section1", $about_us_page_id);
-$section3_content = $section3['content'];
+$section3 = (null !== (get_field("story"))) ? get_field("story") : null;
+if ($section3 !== null) {
+    $section3_content = $section3['content'];
+}
 
 $why_us = (null !== (get_field("why_us", $page_id))) ? get_field("why_us", $page_id) : null;
 $why_us_title = $why_us['title'];
@@ -87,19 +89,46 @@ $latest_blog = new WP_Query([
 ]);
 
 
+$main_service_term_link = get_term_link(get_term_by('slug', 'moving-services', 'service-cat')->term_id);
 
 ?>
 
 <?php get_header(); ?>
+
 <main class="home-page">
     <section class="hero-section-home">
-        <div>
-            <h1>Its moving time</h1>
+        <div class="title-button-hero">
+            <h1>YoozMove Main</h1>
             <p class="description-hero">let’s make your next move easy</p>
             <a href="#home-form-section">
                 <div class="submit-button-comment">get a qoute</div>
             </a>
+
         </div>
+        <div class="clouds-wrapper">
+            <?= get_template_part('templates/components/svg/clouds') ?>
+        </div>
+
+        <div class="car-wrapper">
+            <?= get_template_part('templates/components/svg/car') ?>
+        </div>
+
+        <div class="grass-wrapper">
+            <?= get_template_part('templates/components/svg/grass') ?>
+        </div>
+
+        <div class="city-wrapper">
+            <?= get_template_part('templates/components/svg/city-hero') ?>
+        </div>
+
+        <div class="road-wrapper">
+            <?= get_template_part('templates/components/svg/road') ?>
+        </div>
+
+        <div class="road-line-wrapper">
+            <?= get_template_part('templates/components/svg/road-line') ?>
+        </div>
+
 
     </section>
 
@@ -107,7 +136,7 @@ $latest_blog = new WP_Query([
         <section class="introduce-services-home container">
             <div class="title-btn">
                 <h2 class="title-section">our services</h2>
-                <div class="submit-button-comment btn-mobile-not-show">view all</div>
+                <a class="submit-button-comment btn-mobile-not-show" href="<?= $main_service_term_link ?>">view all</a>
             </div>
             <div class="service-wrapper-home">
                 <?php while ($service_in_home->have_posts()) :
@@ -125,7 +154,8 @@ $latest_blog = new WP_Query([
                 <?php wp_reset_postdata(); ?>
 
             </div>
-            <div class="submit-button-comment btn-desktop-not-show">view all</div>
+            <a class="submit-button-comment btn-desktop-not-show" href="<?= $main_service_term_link ?>">view all</a>
+
 
             <div class="image-service-section">
                 <img src=" <?= get_stylesheet_directory_uri() . '/assets/img/service-desktop.png' ?>">
@@ -137,29 +167,35 @@ $latest_blog = new WP_Query([
         </section>
     <?php endif; ?>
 
-    <?php if (!is_null($section3)) : ?>
+    <?php if (($section3) != null) : ?>
         <section class="container yoozmove-story-section">
             <div class="title-btn">
-                <h2 class="title-section">yoozmove story</h2>
+                <h2 class="title-section">yoozMove story</h2>
                 <a class="btn-mobile-not-show" href="<?= get_permalink($about_us_page_id) ?>">
                     <div class="submit-button-comment btn-mobile-not-show">view all</div>
                 </a>
             </div>
 
-            <?php if (!is_null($section3_content)) : ?>
+            <?php if (!empty($section3_content)) : ?>
                 <div class="yoozmove-story-content">
                     <?php foreach ($section3_content as $content_group) : ?>
-                        <?php if (!is_null($content_group)) : ?>
+                        <?php if (!empty($content_group['description'])) : ?>
                             <div class="content">
-                                <div class="image">
-                                    <?= wp_get_attachment_image($content_group['image_content'], 'full') ?>
-                                </div>
-                                <div class="border-about-us text-content">
-                                    <div class="number-position">
-                                        <p class="number"><?= $content_group['number'] ?></p>
-                                        <?= $content_group['description'] ?>
+                                <?php if (!empty($content_group['image_content'])) : ?>
+                                    <div class="image">
+                                        <?= wp_get_attachment_image($content_group['image_content'], 'full') ?>
                                     </div>
-                                </div>
+                                <?php endif; ?>
+                                <?php if (!empty($content_group['description'])) : ?>
+                                    <div class="text-content">
+                                        <div class="heading-description ">
+                                            <?php if (!empty($content_group['heading'])) : ?>
+                                                <p class="heading"><?= $content_group['heading'] ?></p>
+                                            <?php endif; ?>
+                                            <div class="description-content"><?= $content_group['description'] ?></div>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         <?php endif; ?>
                     <?php endforeach; ?>
@@ -177,7 +213,7 @@ $latest_blog = new WP_Query([
         <h2 class="title-section"> get a qoute </h2>
         <div class="form-and-image">
             <?php
-            get_template_part('templates/components/form/form', 'service', ['post_id' => $post_id]);
+            get_template_part('templates/components/form/form', 'service');
             ?>
             <div class="image-form-section">
                 <img src=" <?= get_stylesheet_directory_uri() . '/assets/img/image-map.png' ?>">
@@ -303,6 +339,7 @@ $latest_blog = new WP_Query([
                                 <div>
                                     <?php $faq_query = new WP_Query([
                                         'post_type' => 'faq',
+                                        'posts_per_page' => 5,
                                         'tax_query' => [
                                             [
                                                 'taxonomy' => 'faq-cat',
@@ -311,6 +348,7 @@ $latest_blog = new WP_Query([
                                             ]
                                         ]
                                     ]);
+
                                     if ($faq_query->have_posts()) {
                                         while ($faq_query->have_posts()) {
                                             $faq_query->the_post();
@@ -322,7 +360,9 @@ $latest_blog = new WP_Query([
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach; ?>
+                    <?php
+
+                    endforeach; ?>
                 </div>
                 <div><img src="<?= get_stylesheet_directory_uri() . '/assets/img/image-faq-home.png'  ?>"></div>
             </div>
@@ -343,7 +383,7 @@ $latest_blog = new WP_Query([
                             <?php if (!empty($content_group['title'])) : ?>
                                 <div class="content">
                                     <p class="title"><?= $content_group['title'] ?></p>
-                                    <?= $content_group['description'] ?>
+                                    <div class="description"><?= $content_group['description'] ?></div>
                                 </div>
                             <?php endif ?>
                         <?php endif; ?>
@@ -356,17 +396,17 @@ $latest_blog = new WP_Query([
                 </div>
                 <div class="title-form-inputs">
                     <p class="title-form capitalize">How do I join?</p>
-                    <p>
-                        Ready to apply to Yooz Move? Send in your application with a resume and a cover letter showcasing your relevant experience and how it aligns with our company values.
+                    <p class="description-join">
+                        Ready to apply to YoozMove? Send in your application with a resume and a cover letter showcasing your relevant experience and how it aligns with our company values.
                     </p>
                     <div class="data-form">
                         <div>
-                            <form action="" id="resume-form" method="post">
+                            <form action="#" id="resume-form" method="post" enctype="multipart/form-data">
                                 <div>
-                                    <input id="job_name" class="data" type="text" name="name" placeholder="First Name" required>
-                                    <input class="data" type="text" name="last-name" placeholder="Last Name">
-                                    <input class="data" type="email" name="email" placeholder="Email">
-                                    <input class="data" type="tel" placeholder="Phone Number " name="phone-number" required>
+                                    <input class="data" type="text" name="name" id="name" placeholder="First Name" required>
+                                    <input class="data" type="text" name="last-name" id="last-name" placeholder="Last Name" required>
+                                    <input class="data" type="email" name="email" id="email" placeholder="Email" required>
+                                    <input class="data" type="file" placeholder="Attach File" id="file" name="file" accept=".pdf" required>
                                 </div>
                                 <button id="resume-form-submit" class="button" type="submit">Send Resume</button>
                             </form>

@@ -19,6 +19,7 @@
     }
     .testimonial-description {
       color: $gray3;
+      text-align: justify;
     }
     .author-date {
       @include d_flex(row, flex-start, stretch, nowrap, false, PxToRem(12));

@@ -9,6 +9,7 @@ $phone_number = null !== get_option('cyn_phone_number_one') ? get_option('cyn_ph
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<?php wp_head() ?>
 </head>
 

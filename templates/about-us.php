@@ -46,7 +46,7 @@ $section4_content = $section4['content'];
                         <div class="border-about-us text-content">
                             <div class="number-position">
                                 <p class="number"><?= $content_group['number'] ?></p>
-                                <?= $content_group['description'] ?>
+                                <div class="description"><?= $content_group['description'] ?></div>
                             </div>
                         </div>
                     </div>

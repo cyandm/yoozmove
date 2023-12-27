@@ -24,6 +24,7 @@ main.service-archive-page {
       }
       .description-hero {
         @include font_style(header4);
+        text-align: justify;
       }
       a {
         width: max-content;

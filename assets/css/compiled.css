@@ -3595,8 +3595,13 @@ main.home-page .hero-section-home .car-wrapper {
   z-index: -1;
 }
 main.home-page .hero-section-home .car-wrapper #car {
-  max-height: 300px;
-  width: 60vw;
+  overflow: visible;
+  width: 40vw;
+}
+@media (max-width: 600px) {
+  main.home-page .hero-section-home .car-wrapper #car {
+    width: 60vw;
+  }
 }
 @media (max-width: 400px) {
   main.home-page .hero-section-home .car-wrapper #car {
@@ -3610,12 +3615,12 @@ main.home-page .hero-section-home .grass-wrapper {
 }
 @media (max-width: 800px) {
   main.home-page .hero-section-home .grass-wrapper #grass-svg {
-    height: 50px;
+    height: 40px;
   }
 }
 @media (max-width: 600px) {
   main.home-page .hero-section-home .grass-wrapper #grass-svg {
-    height: 40px;
+    height: 30px;
   }
 }
 @media (max-width: 450px) {

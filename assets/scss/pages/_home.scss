@@ -57,8 +57,11 @@ main.home-page {
       isolation: isolate;
       z-index: -1;
       #car {
-        max-height: 300px;
-        width: 60vw;
+        overflow: visible;
+        width: 40vw;
+        @media (max-width: 600px) {
+          width: 60vw;
+        }
         @media (max-width: 400px) {
           transform: translateX(100px);
         }
@@ -70,12 +73,12 @@ main.home-page {
       z-index: -3;
       @media (max-width: 800px) {
         #grass-svg {
-          height: 50px;
+          height: 40px;
         }
       }
       @media (max-width: 600px) {
         #grass-svg {
-          height: 40px;
+          height: 30px;
         }
       }
       @media (max-width: 450px) {
@@ -89,8 +92,7 @@ main.home-page {
       bottom: 0.5rem;
       z-index: -4;
       right: 0;
-      #city-hero-svg {
-      }
+
       @media (max-width: 700px) {
         display: flex;
         justify-content: center;
@@ -720,5 +722,3 @@ main.home-page {
 .scroller[data-speed='slow'] {
   --_animation-duration: 60s;
 }
-
-
